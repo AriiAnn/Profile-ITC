@@ -1,0 +1,145 @@
+/* ==========================================================
+   🎨 PALET WARNA UTAMA - Sesuai logo Yayasan
+   ========================================================== */
+:root {
+  --brand-primary: #4E2A86;  /* ungu bingkai logo */
+  --brand-navy: #1F275F;     /* biru tua */
+  --brand-accent: #E31B23;   /* merah logo */
+  --brand-ink: #0F172A;      /* netral gelap */
+  --emerald: #047857;        /* hijau tema web */
+  --emerald-light: #e6f4ef;  /* hijau muda */
+}
+
+/* ==========================================================
+   🧱 UTILITAS WARNA (bisa dipakai di seluruh komponen)
+   ========================================================== */
+.bg-brand-primary  { background-color: var(--brand-primary) !important; }
+.bg-brand-navy     { background-color: var(--brand-navy) !important; }
+.text-brand-primary { color: var(--brand-primary) !important; }
+.text-brand-accent { color: var(--brand-accent) !important; }
+.border-brand-primary { border-color: var(--brand-primary) !important; }
+
+/* ==========================================================
+   ✳️ HOVER LINK (Navbar, Footer, dll)
+   ========================================================== */
+a.nav-link:hover,
+a.nav-link:focus {
+  color: var(--brand-primary) !important;
+  transition: 0.3s ease;
+}
+
+/* ==========================================================
+   📏 KOMPENSASI UNTUK NAVBAR FIXED-TOP
+   ========================================================== */
+body {
+  padding-top: 72px; /* sesuaikan tinggi navbar */
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==========================================================
+   🟩 TOP BANNER DI BAWAH NAVBAR
+   ========================================================== */
+.top-banner {
+  background-color: var(--emerald);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+/* ==========================================================
+   🟢 FOOTER (tema hijau lembut)
+   ========================================================== */
+footer {
+  background-color: var(--emerald-light);
+  color: #333;
+}
+footer h6, footer h5, footer .fw-bold {
+  color: var(--emerald);
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--emerald);
+  text-decoration: underline;
+}
+footer .footer-bottom {
+  background-color: var(--emerald);
+  color: white;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+
+/* ==========================================================
+   🌈 NAVBAR
+   ========================================================== */
+.navbar {
+  background-color: var(--emerald) !important;
+}
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #ffffff;
+}
+.navbar .nav-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid var(--emerald-light);
+}
+
+/* ==========================================================
+   🧩 RESPONSIVE DAN ESTETIKA TAMBAHAN
+   ========================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+hr {
+  border-color: #ccc;
+}
+/* ruang untuk navbar fixed-top */
+body { padding-top: 72px; }
+
+/* gaya kecil untuk hover */
+.navbar .nav-link { color: rgba(255,255,255,0.85); }
+.navbar .nav-link:hover,
+.navbar .nav-link:focus { color: #fff; transition: .2s ease; }
+.navbar .nav-link.active { color: #fff; border-bottom: 2px solid #e6f4ef; }
+
+/* Warna identitas */
+:root {
+  --brand-green: #047857;
+  --brand-light: #e6f4ef;
+}
+
+/* Navbar item dasar */
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover */
+.navbar .nav-link:hover,
+.navbar .nav-link.hover-nav:hover {
+  color: #fff;
+  border-bottom: 2px solid var(--brand-light);
+  transform: translateY(-1px);
+}
+
+/* Aktif */
+.navbar .nav-link.active-nav {
+  color: #ffffff !important;
+  border-bottom: 3px solid var(--brand-light);
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Spasi untuk konten biar nggak ketutup navbar */
+body {
+  padding-top: 72px;
+}
