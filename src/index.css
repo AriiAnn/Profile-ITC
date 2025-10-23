@@ -143,3 +143,55 @@ body { padding-top: 72px; }
 body {
   padding-top: 72px;
 }
+/* Animasi dropdown: fade + slide */
+.dropdown-menu.dropdown-animate {
+  /* agar bisa transition saat show/hide */
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity .18s ease, transform .22s ease;
+  border-radius: .75rem;              /* sudut lebih lembut */
+  padding: .5rem;                     /* jarak isi */
+}
+
+/* Saat terbuka oleh Bootstrap (.show), animasi ke posisi final */
+.dropdown-menu.dropdown-animate.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover feel pada item */
+.dropdown-menu .dropdown-item {
+  border-radius: .5rem;
+}
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover {
+  background: #e6f4ef;
+}
+
+/* Animasi caret (ikon ▼ berputar saat drop terbuka) */
+.nav-item.dropdown .dropdown-caret {
+  display: inline-block;
+  transition: transform .2s ease;
+  font-size: .8rem;
+  line-height: 1;
+  margin-top: 1px;
+}
+.nav-item.dropdown .dropdown-toggle[aria-expanded="true"] .dropdown-caret {
+  transform: rotate(180deg);
+}
+
+/* (Opsional) drop sedikit lebih melayang */
+.dropdown-menu.dropdown-animate {
+  box-shadow: 0 12px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.06);
+}
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;             /* override bootstrap */
+  }
+  /* Pastikan animasi tetap jalan */
+  .nav-item.dropdown:hover > .dropdown-menu.dropdown-animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

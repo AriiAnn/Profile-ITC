@@ -8,7 +8,15 @@ export default function Navbar() {
     { name: "Tentang Kami", path: "/tentang" },
     { name: "Visi & Misi", path: "/visi-misi" },
     { name: "Pengurus", path: "/pengurus" },
-    { name: "Program", path: "/program" },
+    {
+      name: "Program",
+      dropdown: [
+        { name: "Program 1 Tahun", path: "/program/1tahun" },
+        { name: "Pelatihan Digital", path: "/program/digital" },
+        { name: "Kursus Komputer Dasar", path: "/program/dasar" },
+        { name: "Program Profesional", path: "/program/profesional" },
+      ],
+    },
     { name: "Hubungi Kami", path: "/kontak" },
   ];
 
@@ -55,20 +63,51 @@ export default function Navbar() {
         {/* Menu */}
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav ms-auto">
-            {navItems.map((item) => (
-              <li className="nav-item" key={item.path}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    "nav-link px-3 fw-semibold" +
-                    (isActive ? " active-nav" : " hover-nav")
-                  }
-                  end
-                >
-                  {item.name}
-                </NavLink>
-              </li>
-            ))}
+            {navItems.map((item) =>
+              item.dropdown ? (
+                <li className="nav-item dropdown" key={item.name}>
+                  <a
+                    href="#"
+                    className="nav-link dropdown-toggle fw-semibold px-3 d-flex align-items-center gap-1"
+                    id="programDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {item.name}
+                    {/* caret kecil */}
+                    <span className="dropdown-caret" aria-hidden="true"></span>
+                  </a>
+
+                  <ul
+                    className="dropdown-menu border-0 shadow-sm dropdown-animate"
+                    aria-labelledby="programDropdown"
+                  >
+                    {item.dropdown.map((sub) => (
+                      <li key={sub.path}>
+                        <NavLink to={sub.path} className="dropdown-item" end>
+                          {sub.name}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+              ) : (
+                <li className="nav-item" key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      "nav-link px-3 fw-semibold" +
+                      (isActive ? " active-nav" : " hover-nav")
+                    }
+                    end
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>

@@ -45,7 +45,11 @@ export default function Pengurus() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section
+  className="py-5"
+  style={{ backgroundColor: "#e6f4ef", marginTop: "1.5rem" }}
+>
+
         <div className="container">
           <h1 className="h2 fw-bold mb-2">Pengurus Yayasan</h1>
           <p className="text-secondary mb-0" style={{ maxWidth: 820 }}>

@@ -15,7 +15,7 @@ export default function Kontak() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#e6f4ef", marginTop: "1.5rem" }}>
         <div className="container text-center">
           <h1 className="fw-bold mb-3">Hubungi Kami</h1>
           <p className="text-secondary mx-auto" style={{ maxWidth: 700 }}>
@@ -51,7 +51,7 @@ export default function Kontak() {
                 <FaEnvelope size={26} className="mb-2 text-success" />
                 <h6 className="fw-bold mb-1">Email</h6>
                 <p className="text-muted mb-0 small">
-                  info@intermediajuyutama.ac.id
+                  Intermediatcrap@gmail.com
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function Kontak() {
           </h2>
           <div className="d-flex justify-content-center gap-4 flex-wrap">
             <a
-              href="https://www.tiktok.com/@intermediaitc"
+              href="https://www.tiktok.com/@ITC.Business.School"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark text-decoration-none"
@@ -76,7 +76,7 @@ export default function Kontak() {
               <span className="d-block small mt-1">TikTok</span>
             </a>
             <a
-              href="https://www.instagram.com/intermedia.itc/"
+              href="https://www.instagram.com/itcbusinessschool/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark text-decoration-none"
@@ -85,7 +85,7 @@ export default function Kontak() {
               <span className="d-block small mt-1">Instagram</span>
             </a>
             <a
-              href="https://facebook.com/intermediaitc"
+              href="https://facebook.com/intermediabusiness"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark text-decoration-none"
@@ -94,7 +94,7 @@ export default function Kontak() {
               <span className="d-block small mt-1">Facebook</span>
             </a>
             <a
-              href="https://youtube.com/@intermediaitc"
+              href="https://youtube.com/@intermedia.tc.9738"
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark text-decoration-none"
@@ -128,10 +128,10 @@ export default function Kontak() {
               <div className="d-flex align-items-start gap-3">
                 <FaUserTie className="text-success mt-1" size={28} />
                 <div>
-                  <p className="mb-1 fw-semibold">Admin ITC — Rina Oktaviani</p>
+                  <p className="mb-1 fw-semibold">Admin ITC</p>
                   <p className="text-muted mb-0 small">
                     Telepon/WhatsApp: 0853-6282-3434<br />
-                    Email: admin.itc@gmail.com
+                    Email: Intermediatcrap@gmail.com
                   </p>
                 </div>
               </div>

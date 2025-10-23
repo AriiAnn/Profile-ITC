@@ -24,7 +24,7 @@ export default function Footer() {
               <BsTelephone className="me-2 text-success" /> +62 8536-2823-434
             </p>
             <p className="small mb-1">
-              <FaEnvelope className="me-2 text-success" /> info@intermedia.ac.id
+              <FaEnvelope className="me-2 text-success" /> Intermediatcrap@gmail.com
             </p>
             <p className="small">
               <FaLink className="me-2 text-success" /> www.intermedia.ac.id
@@ -58,7 +58,7 @@ export default function Footer() {
 
             <div className="d-flex gap-3 mt-3">
               <a
-                href="https://www.tiktok.com/@intermediaitc"
+                href="https://www.tiktok.com/@ITC.Business.School"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark fs-5"
@@ -67,7 +67,7 @@ export default function Footer() {
                 <FaTiktok />
               </a>
               <a
-                href="https://www.instagram.com/intermedia.itc/"
+                href="https://www.instagram.com/itcbusinessschool/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark fs-5"
@@ -76,7 +76,7 @@ export default function Footer() {
                 <FaInstagram className="text-danger" />
               </a>
               <a
-                href="https://facebook.com/intermediaitc"
+                href="https://facebook.com/intermediabusiness"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark fs-5"
@@ -85,7 +85,7 @@ export default function Footer() {
                 <FaFacebook className="text-primary" />
               </a>
               <a
-                href="https://youtube.com/@intermediaitc"
+                href="https://youtube.com/@intermedia.tc.9738"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark fs-5"

@@ -4,7 +4,7 @@ export default function VisiMisi() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#e6f4ef" , marginTop: "4rem"}}>
         <div className="container py-3">
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
@@ -44,8 +44,7 @@ export default function VisiMisi() {
               </h2>
               <p className="mb-0 text-muted fs-5">
                 <strong>
-                  Menjadi lembaga kursus unggulan yang melahirkan talenta digital
-                  kompeten, berkarakter, dan relevan dengan kebutuhan industri.
+                  Menjadi Lembaga Pendidikan berkualitas, menciptakan wirausaha yang sukses.
                 </strong>
               </p>
             </div>
@@ -62,33 +61,40 @@ export default function VisiMisi() {
           <div className="row g-3">
             {[
               {
-                t: "Pembelajaran Terapan",
-                d: "Menerapkan kurikulum berorientasi praktik, mini-project, dan portofolio.",
+                t: "Menyiapkan sumber daya yang handal dibidang computer baik instruktur, Media pembelajaran yang sesuai dengan tuntutan jaman",
               },
               {
-                t: "Pembimbingan Karier",
-                d: "Menyediakan pendampingan karier, simulasi interview, dan penulisan CV/LinkedIn.",
+                t: "Menjadi Lembaga Pendidikan berskala nasional, mengajarkan teknologi terapan, aplikasinya  yang  bermanfaat langsung bagi masyarakat. ",
+
               },
               {
-                t: "Kemitraan Industri",
-                d: "Membangun kolaborasi dengan sekolah, UMKM, dan perusahaan untuk link & match.",
+                t: "Menjadi Lembaga Pendidikan yang menjadi manusia Kerja Cerdas, Kerja Keras, Kerja Tuntas, Kerja Ikhlas.",
+
               },
               {
-                t: "Kedisiplinan & Etos Kerja",
-                d: "Menanamkan nilai integritas, tanggung jawab, dan komunikasi profesional.",
+                t: "Menjadi Lembaga Pendidikan yang melayani live time learning dan pusat informasi teknologi bagi masyarakat",
+
               },
               {
-                t: "Aksesibel & Adaptif",
-                d: "Menyediakan jadwal fleksibel dan pembaruan materi sesuai tren teknologi.",
+                t: "Menyelenggarakan pendidikan, penelitian, dan pengabdian kepada masyarakat yang mendukung pembangunan yang relevan dengan kebutuhan masyarakat secara efektif dan efisien",
+
               },
               {
-                t: "Mutu Berkelanjutan",
-                d: "Melakukan evaluasi rutin terhadap pengajaran, fasilitas, dan layanan peserta.",
+                t: "Membentuk insan yang beretika, professional dan mengembangkan suasana dan budaya pendidik yang kondusif dan dinamis",
+
+              },
+              {
+                t: "Membina peserta didik untuk berkembang menjadi tenaga professional dibidang teknologi informasi",
+
+              },
+              {
+                t: "Melakukan kerjasama kemitraan yang sinergis dengan pihak lain",
+
               },
             ].map((m, i) => (
               <div className="col-md-6" key={i}>
                 <div className="p-4 rounded-3 h-100 bg-white shadow-sm border-start border-4"
-                     style={{ borderColor: "#047857" }}>
+                  style={{ borderColor: "#047857" }}>
                   <div className="fw-semibold mb-1">{m.t}</div>
                   <div className="text-muted mb-0">{m.d}</div>
                 </div>

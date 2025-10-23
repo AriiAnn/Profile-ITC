@@ -1,9 +1,15 @@
 /* src/pages/Tentang.jsx */
 import React from "react";
+// HAPUS dua import di bawah jika Navbar/Footer sudah ada di App.jsx (Layout)
 import Navbar from "../components/Navbar";
 import NavbarBanner from "../components/NavbarBanner";
-import Footer from "../components/Footer";
-import logo from "../assets/logo.png";
+// ----
+import logo from "../assets/logo.PNG";
+
+// === Import gambar lokal untuk galeri ===
+import foto1 from "../assets/galeri1.jpeg";
+import foto2 from "../assets/galeri2.jpeg";
+import foto3 from "../assets/galeri3.jpeg";
 
 /** Data yayasan */
 const orgInfo = {
@@ -11,7 +17,7 @@ const orgInfo = {
   alamat:
     "Jl. Padang Bulan No.13 A–C, Kel. Cendana, Kec. Rantau Utara, Kab. Labuhanbatu, Sumatera Utara",
   telepon: "+62 8536-2823-434",
-  email: "info@intermediajuyutama.ac.id",
+  email: "Intermediatcrap@gmail.com",
   website: "www.intermediajuyutama.ac.id",
   tahunBerdiri: "2017",
   npsn: "K5668343",
@@ -21,8 +27,16 @@ const orgInfo = {
 };
 
 export default function Tentang() {
+  // array gambar campuran: lokal + (opsional) online
+  const galeri = [
+    foto1,
+    foto2,
+    foto3, // boleh dihapus jika mau full lokal
+  ];
+
   return (
     <main>
+      {/* HAPUS jika sudah ada di Layout */}
       <Navbar />
       <NavbarBanner />
 
@@ -33,7 +47,7 @@ export default function Tentang() {
             <div className="col-md-2 text-center">
               <img
                 src={logo}
-                alt="Logo"
+                alt="Logo ITC"
                 className="img-fluid rounded-circle border"
                 style={{ maxWidth: 120 }}
               />
@@ -105,11 +119,7 @@ export default function Tentang() {
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner">
-                  {[
-                    "https://picsum.photos/seed/lab/1200/600",
-                    "https://picsum.photos/seed/kelas/1200/600",
-                    "https://picsum.photos/seed/event/1200/600",
-                  ].map((src, i) => (
+                  {galeri.map((src, i) => (
                     <div
                       className={`carousel-item ${i === 0 ? "active" : ""}`}
                       key={i}
@@ -149,7 +159,7 @@ export default function Tentang() {
                 </button>
               </div>
               <div className="small text-muted mt-2">
-                *Ganti dengan foto kegiatan asli (lab, kelas, wisuda, pelatihan).
+                {/* *Ganti/ tambah foto dengan file asli di folder <code>src/assets</code>. */}
               </div>
             </div>
 
@@ -183,6 +193,8 @@ export default function Tentang() {
           </div>
         </div>
       </section>
+
+      {/* HAPUS Footer di sini jika pakai Layout global */}
     </main>
   );
 }
