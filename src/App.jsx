@@ -1,32 +1,32 @@
 import React from "react";
-import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 
-// Layout global
+// ===== Layout Global =====
 import Navbar from "./components/Navbar";
 import NavbarBanner from "./components/NavbarBanner";
 import Footer from "./components/Footer";
 
-// Halaman
+// ===== Halaman =====
 import Dashboard from "./pages/Dashboard";
-import Tentang from "./pages/Tentang"; 
-import VisiMisi from "./pages/VisiMisi";    
+import Tentang from "./pages/Tentang";
+import VisiMisi from "./pages/VisiMisi";
 import Kontak from "./pages/Kontak";
-import Pengurus from "./pages/Pengurus";   // pastikan versi "content-only" (tanpa Navbar/Footer)
+import Pengurus from "./pages/Pengurus";
 
-
-
-// Scroll to top saat route berubah
+// ===== Scroll to Top saat route berubah =====
 function ScrollToTop() {
+  const { pathname, search, hash } = useLocation();
+
   React.useEffect(() => {
-    const unlisten = () => window.scrollTo({ top: 0, behavior: "smooth" });
-    // dengarkan setiap perubahan pushState/popstate
-    window.addEventListener("popstate", unlisten);
-    return () => window.removeEventListener("popstate", unlisten);
-  }, []);
+    // Jika ada anchor #section, biarkan browser yang handle
+    if (hash) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname, search, hash]);
+
   return null;
 }
 
-// Layout wrapper
+// ===== Layout Wrapper =====
 function Layout() {
   return (
     <>
@@ -38,6 +38,7 @@ function Layout() {
   );
 }
 
+// ===== App =====
 export default function App() {
   return (
     <>
@@ -46,13 +47,11 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="/tentang" element={<Tentang />} />
-           <Route path="/visi-misi" element={<VisiMisi />} />
-            <Route path="/kontak" element={<Kontak />} />
-       
-          {/* <Route path="/program" element={<Program />} /> */}
-         
+          <Route path="/visi-misi" element={<VisiMisi />} />
+          <Route path="/kontak" element={<Kontak />} />
           <Route path="/pengurus" element={<Pengurus />} />
-         
+
+          {/* Redirect unknown route ke Beranda */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

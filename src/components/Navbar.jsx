@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
@@ -20,17 +20,26 @@ export default function Navbar() {
     { name: "Hubungi Kami", path: "/kontak" },
   ];
 
+  const closeCollapse = () => {
+    const el = document.getElementById("mainNav");
+    try {
+      const inst = window.bootstrap?.Collapse.getInstance(el);
+      inst?.hide?.();
+    } catch {}
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
       style={{ backgroundColor: "#047857" }}
     >
       <div className="container">
-        {/* Brand */}
-        <a
-          href="/"
+        {/* Brand -> pakai NavLink agar SPA */}
+        <NavLink
+          to="/"
           className="navbar-brand d-flex align-items-center gap-2"
           title="Intermedia Training Center"
+          onClick={closeCollapse}
         >
           <img
             src={logo}
@@ -39,15 +48,11 @@ export default function Navbar() {
             height="42"
             className="rounded-circle border border-light"
           />
-          <span
-            className="fw-bold text-uppercase"
-            style={{ letterSpacing: "1px" }}
-          >
+          <span className="fw-bold text-uppercase" style={{ letterSpacing: "1px" }}>
             INTERMEDIA TRAINING CENTER
           </span>
-        </a>
+        </NavLink>
 
-        {/* Toggler mobile */}
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -60,7 +65,6 @@ export default function Navbar() {
           <span className="navbar-toggler-icon" />
         </button>
 
-        {/* Menu */}
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav ms-auto">
             {navItems.map((item) =>
@@ -75,33 +79,35 @@ export default function Navbar() {
                     aria-expanded="false"
                   >
                     {item.name}
-                    {/* caret kecil */}
                     <span className="dropdown-caret" aria-hidden="true"></span>
                   </a>
-
                   <ul
                     className="dropdown-menu border-0 shadow-sm dropdown-animate"
                     aria-labelledby="programDropdown"
                   >
                     {item.dropdown.map((sub) => (
                       <li key={sub.path}>
-                        <NavLink to={sub.path} className="dropdown-item" end>
+                        <NavLink
+                          to={sub.path}
+                          className="dropdown-item"
+                          end
+                          onClick={closeCollapse}
+                        >
                           {sub.name}
                         </NavLink>
                       </li>
                     ))}
                   </ul>
                 </li>
-
               ) : (
                 <li className="nav-item" key={item.path}>
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      "nav-link px-3 fw-semibold" +
-                      (isActive ? " active-nav" : " hover-nav")
+                      "nav-link px-3 fw-semibold" + (isActive ? " active-nav" : " hover-nav")
                     }
                     end
+                    onClick={closeCollapse}
                   >
                     {item.name}
                   </NavLink>
