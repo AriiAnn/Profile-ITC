@@ -12,6 +12,9 @@ import Tentang from "./pages/Tentang";
 import VisiMisi from "./pages/VisiMisi";
 import Kontak from "./pages/Kontak";
 import Pengurus from "./pages/Pengurus";
+import ProgramReguler from "./pages/ProgramReguler";
+import ProgramProfesional from "./pages/ProgramProfesional";
+import ProgramIndex from "./pages/ProgramIndex";
 
 // ===== Scroll to Top saat route berubah =====
 function ScrollToTop() {
@@ -50,6 +53,9 @@ export default function App() {
           <Route path="/visi-misi" element={<VisiMisi />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="/pengurus" element={<Pengurus />} />
+          <Route path="/program/reguler" element={<ProgramReguler />} />
+          <Route path="/program/profesional" element={<ProgramProfesional />} />
+          <Route path="/program" element={<ProgramIndex />} />
 
           {/* Redirect unknown route ke Beranda */}
           <Route path="*" element={<Navigate to="/" replace />} />

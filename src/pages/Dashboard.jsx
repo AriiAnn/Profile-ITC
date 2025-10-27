@@ -7,8 +7,12 @@ import {
 import logo from "../assets/logo.PNG";
 
 // === Import foto lokal untuk galeri mini ===
-import gal1 from "../assets/2.png";
+import gal1 from "../assets/galeri2.jpeg";
 import gal2 from "../assets/galeri1.jpeg";
+// di paling atas Dashboard.jsx
+import regulerImg from "../assets/galeri2.jpeg";
+import profesiImg from "../assets/galeri1.jpeg";
+
 // kalau mau tambah: import gal3 from "../assets/nama-file.jpg";
 
 // Kumpulan foto galeri mini (lokal / bisa dicampur dengan URL online)
@@ -23,7 +27,7 @@ export default function Dashboard() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#e6f4ef"}}>
         <div className="container py-4">
           <h1 className="display-6 fw-bold text-center text-dark">
             LKP Intermedia Training Center (ITC) – Rantau Prapat
@@ -139,37 +143,70 @@ export default function Dashboard() {
         </div>
       </section>
 
+
       {/* PROGRAM UNGGULAN */}
       <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
         <div className="container">
           <div className="d-flex justify-content-between align-items-end mb-3">
-            <h2 className="h4 mb-0">Program Unggulan</h2>
+            <h2 className="h4 mb-0">Program</h2>
             <a href="/program" className="small text-success">Lihat semua program →</a>
           </div>
 
-          <div className="row g-3">
-            {[
-              { title: "Profesi Komputer 1 Tahun", dur: "12 Bulan", desc: "Word • Excel • Desain • Jaringan • Career Readiness" },
-              { title: "Multimedia Dasar", dur: "4–6 Bulan", desc: "Desain grafis & video untuk konten kreatif" },
-              { title: "Digital Marketing", dur: "3–4 Bulan", desc: "Konten, SEO dasar, Ads & Analytics" },
-            ].map((p, i) => (
-              <div className="col-md-4" key={i}>
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="ratio ratio-16x9 rounded-top" style={{ backgroundColor: "#e6f4ef" }} />
-                  <div className="card-body">
-                    <h5 className="card-title mb-1">{p.title}</h5>
-                    <small className="text-muted d-block mb-2">{p.desc}</small>
-                    <span className="badge text-bg-success-subtle border border-success-subtle">
-                      <FaClock className="me-1" />
-                      {p.dur}
-                    </span>
+          <div className="row g-4">
+            {/* Program Reguler */}
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="ratio ratio-16x9 rounded-top overflow-hidden">
+                  <img
+                    src={regulerImg}
+                    alt="Program Reguler"
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title mb-1 fw-bold">Program Reguler</h5>
+                  <small className="text-muted d-block mb-2">
+                    Administrasi Perkantoran • Desain Grafis • Teknisi Komputer & Jaringan
+                  </small>
+                  <span className="badge bg-success text-white me-2">Fleksibel / Bulanan</span>
+                  <span className="badge bg-secondary text-white">Full Praktik</span>
+                  <div className="mt-3 d-flex gap-2">
+                    <a href="/program/reguler" className="btn btn-success">Lihat Detail</a>
+                    <a href="/kontak" className="btn btn-outline-success">Daftar / Konsultasi</a>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Program Profesi */}
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="ratio ratio-16x9 rounded-top overflow-hidden">
+                  <img
+                    src={profesiImg}
+                    alt="Program Profesi"
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title mb-1 fw-bold">Program Profesi Komputer (1 Tahun)</h5>
+                  <small className="text-muted d-block mb-2">
+                    10 Bulan Pendidikan + 2 Bulan Magang • Termasuk Uji Kompetensi
+                  </small>
+                  <span className="badge bg-success text-white me-2">Jalur Cepat Dapat Kerja</span>
+                  <span className="badge bg-secondary text-white">Job-Ready</span>
+                  <div className="mt-3 d-flex gap-2">
+                    <a href="/program/profesional" className="btn btn-success">Lihat Detail</a>
+                    <a href="/kontak" className="btn btn-outline-success">Daftar / Konsultasi</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
 
       {/* PETA + SAMPINGNYA */}
       <section className="py-5">
@@ -262,9 +299,9 @@ export default function Dashboard() {
                       <span className="visually-hidden">Next</span>
                     </button>
                   </div>
-                  <div className="small text-muted mt-2">
+                  {/* <div className="small text-muted mt-2">
                     *Tambahkan foto lain dengan meng-import file baru dari <code>src/assets</code> dan masukkan ke array <code>GALERI_MINI</code>.
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

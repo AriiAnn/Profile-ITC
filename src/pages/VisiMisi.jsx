@@ -4,7 +4,7 @@ export default function VisiMisi() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" , marginTop: "4rem"}}>
+      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
         <div className="container py-3">
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
@@ -128,13 +128,13 @@ export default function VisiMisi() {
           </div>
 
           <div className="text-center mt-4">
-            <a
+            {/* <a
               href="/program"
               className="btn text-white me-2"
               style={{ backgroundColor: "#047857" }}
             >
               Jelajahi Program
-            </a>
+            </a> */}
             {/* <a
               href="/kontak"
               className="btn btn-outline-success"

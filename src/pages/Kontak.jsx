@@ -15,7 +15,7 @@ export default function Kontak() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef", marginTop: "1.5rem" }}>
+      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
         <div className="container text-center">
           <h1 className="fw-bold mb-3">Hubungi Kami</h1>
           <p className="text-secondary mx-auto" style={{ maxWidth: 700 }}>

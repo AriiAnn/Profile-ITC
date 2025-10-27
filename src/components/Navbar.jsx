@@ -1,122 +1,285 @@
+// src/components/Navbar.jsx
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
-  const navItems = [
-    { name: "Beranda", path: "/" },
-    { name: "Tentang Kami", path: "/tentang" },
-    { name: "Visi & Misi", path: "/visi-misi" },
-    { name: "Pengurus", path: "/pengurus" },
-    {
-      name: "Program",
-      dropdown: [
-        { name: "Program 1 Tahun", path: "/program/1tahun" },
-        { name: "Pelatihan Digital", path: "/program/digital" },
-        { name: "Kursus Komputer Dasar", path: "/program/dasar" },
-        { name: "Program Profesional", path: "/program/profesional" },
-      ],
-    },
-    { name: "Hubungi Kami", path: "/kontak" },
-  ];
+  const { pathname } = useLocation();
+  const isProgramActive = pathname.startsWith("/program");
 
   const closeCollapse = () => {
     const el = document.getElementById("mainNav");
+    try { window.bootstrap?.Collapse.getInstance(el)?.hide?.(); } catch { }
+    // Tutup dropdown yang sedang terbuka (kalau ada)
     try {
-      const inst = window.bootstrap?.Collapse.getInstance(el);
-      inst?.hide?.();
-    } catch {}
+      document.querySelectorAll(".dropdown-menu.show").forEach((dm) => {
+        const toggler = dm.closest(".dropdown")?.querySelector("[data-bs-toggle='dropdown']");
+        const inst = window.bootstrap?.Dropdown.getInstance(toggler);
+        inst?.hide?.();
+      });
+    } catch { }
   };
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
-      style={{ backgroundColor: "#047857" }}
-    >
-      <div className="container">
-        {/* Brand -> pakai NavLink agar SPA */}
-        <NavLink
-          to="/"
-          className="navbar-brand d-flex align-items-center gap-2"
-          title="Intermedia Training Center"
-          onClick={closeCollapse}
-        >
-          <img
-            src={logo}
-            alt="Logo Intermedia Jaya Utama"
-            width="42"
-            height="42"
-            className="rounded-circle border border-light"
-          />
-          <span className="fw-bold text-uppercase" style={{ letterSpacing: "1px" }}>
-            INTERMEDIA TRAINING CENTER
-          </span>
-        </NavLink>
+    <>
+      <nav
+        className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
+        style={{ backgroundColor: "#047857" }}
+      >
+        <div className="container">
+          {/* Brand */}
+          <NavLink
+            to="/"
+            className="navbar-brand d-flex align-items-center gap-2 me-2"
+            title="Intermedia Training Center"
+            onClick={closeCollapse}
+          >
+            <img
+              src={logo}
+              alt="Logo Intermedia Jaya Utama"
+              width="42"
+              height="42"
+              className="rounded-circle border border-light flex-shrink-0"
+            />
+            {/* Versi panjang (tampil ≥576px) */}
+            <span className="brand-full fw-bold text-uppercase d-none d-sm-inline"
+              style={{ letterSpacing: "1px" }}>
+              INTERMEDIA TRAINING CENTER
+            </span>
+            {/* Versi pendek (tampil <576px) */}
+            <span className="brand-short fw-bold text-uppercase d-inline d-sm-none">
+              ITC
+            </span>
+          </NavLink>
 
-        <button
-          className="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
 
-        <div className="collapse navbar-collapse" id="mainNav">
-          <ul className="navbar-nav ms-auto">
-            {navItems.map((item) =>
-              item.dropdown ? (
-                <li className="nav-item dropdown" key={item.name}>
-                  <a
-                    href="#"
-                    className="nav-link dropdown-toggle fw-semibold px-3 d-flex align-items-center gap-1"
-                    id="programDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    {item.name}
-                    <span className="dropdown-caret" aria-hidden="true"></span>
-                  </a>
-                  <ul
-                    className="dropdown-menu border-0 shadow-sm dropdown-animate"
-                    aria-labelledby="programDropdown"
-                  >
-                    {item.dropdown.map((sub) => (
-                      <li key={sub.path}>
-                        <NavLink
-                          to={sub.path}
-                          className="dropdown-item"
-                          end
-                          onClick={closeCollapse}
-                        >
-                          {sub.name}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li className="nav-item" key={item.path}>
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) =>
-                      "nav-link px-3 fw-semibold" + (isActive ? " active-nav" : " hover-nav")
-                    }
-                    end
-                    onClick={closeCollapse}
-                  >
-                    {item.name}
-                  </NavLink>
-                </li>
-              )
-            )}
-          </ul>
+          {/* Toggler */}
+          <button
+            className="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+
+          {/* Menu */}
+          <div className="collapse navbar-collapse" id="mainNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <NavLink to="/" end className="nav-link px-3 fw-semibold hover-nav" onClick={closeCollapse}>
+                  Beranda
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink to="/tentang" className="nav-link px-3 fw-semibold hover-nav" onClick={closeCollapse}>
+                  Tentang Kami
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink to="/visi-misi" className="nav-link px-3 fw-semibold hover-nav" onClick={closeCollapse}>
+                  Visi & Misi
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink to="/pengurus" className="nav-link px-3 fw-semibold hover-nav" onClick={closeCollapse}>
+                  Pengurus
+                </NavLink>
+              </li>
+
+              {/* PROGRAM */}
+              <li className="nav-item dropdown nav-program">
+                {/* Judul Program = toggle; aktif di semua /program/** */}
+                <button
+                  className={
+                    "nav-link btn w-100 text-start px-3 fw-semibold dropdown-toggle nav-program-toggle" +
+                    (isProgramActive ? " active-nav" : " hover-nav")
+                  }
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  data-bs-display="static"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="programMenu"
+                >
+                  Program
+                </button>
+
+                <ul id="programMenu" className="dropdown-menu border-0 shadow-sm rounded-3 program-menu">
+                  <li>
+                    <NavLink to="/program" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
+                      Program
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/program/reguler" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
+                      Program Reguler
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/program/profesional" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
+                      Program Profesi
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="nav-item">
+                <NavLink to="/kontak" className="nav-link px-3 fw-semibold hover-nav" onClick={closeCollapse}>
+                  Hubungi Kami
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* STYLE */}
+      <style>{`
+/* ----- GLOBAL FIX untuk navbar fixed-top ----- */
+body { padding-top: 76px; }
+@media (max-width: 991.98px) { body { padding-top: 68px; } }
+.navbar { z-index: 1040; }
+
+/* ----- CHIP aktif/hover ----- */
+.navbar .nav-link.hover-nav:hover,
+.nav-program-toggle:hover{
+  background-color: rgba(52,211,153,.25);
+  border-radius: .5rem;
+  color: #fff !important;
+}
+.navbar .active-nav{
+  background-color: rgba(52,211,153,.35);
+  border-radius: .5rem;
+  color:#fff !important;
+}
+
+/* ----- Dropdown item: warna hijau (hapus biru) ----- */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active,
+.dropdown-item:active{
+  background-color: rgba(16,185,129,.18);
+  color:#065f46 !important;
+}
+
+/* ===== DESKTOP (≥992px): dropdown di BAWAH teks Program ===== */
+@media (min-width: 992px){
+  .nav-program{ position: relative; } /* anchor supaya tidak lari ke kiri */
+  .program-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin-top: 0;
+    min-width: 220px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: all .18s ease;
+  }
+  .nav-program:hover > .program-menu,
+  .nav-program:focus-within > .program-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE (<992px): dropdown TURUN ke bawah + warna tema ===== */
+@media (max-width: 991.98px){
+  .program-menu{
+    position: static !important;    /* ikut flow list */
+    display: none;                  /* default tertutup, buka via .show */
+    background: #0f766e;            /* hijau tua */
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: none;
+    margin: .25rem 0 0;
+    padding: .25rem 0;
+  }
+  .dropdown-menu.show{ display:block; }
+
+  .program-menu .dropdown-item{ color:#e6fff7; }
+  .program-menu .dropdown-item + .dropdown-item{
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* klik area lebih nyaman */
+  .navbar .nav-link,
+  .nav-program-toggle{ padding: .8rem .9rem; }
+}
+  /* tinggi standar komponen */
+:root{
+  --nav-h: 76px;    /* kira-kira tinggi navbar-mu */
+  --banner-h: 44px; /* tinggi banner (minHeight di komponen) */
+}
+
+/* padding-top dasar: hanya navbar */
+body{ padding-top: var(--nav-h); }
+
+/* saat banner tampil, tambahkan padding top lagi */
+body.has-banner{ padding-top: calc(var(--nav-h) + var(--banner-h)); }
+
+/* pastikan layer & posisi fixed */
+.navbar{ z-index: 1040; }
+.promo-banner-fixed{
+  position: fixed;
+  top: var(--nav-h);   /* tepat di bawah navbar */
+  left: 0; right: 0;
+  z-index: 1039;       /* di bawah navbar, di atas konten */
+}
+ :root{
+  --nav-h: 64px;      /* fallback */
+  --banner-h: 0px;    /* akan diisi JS */
+}
+
+.navbar{ z-index: 1040; }
+
+/* Banner fixed tepat di bawah navbar TANPA celah */
+.promo-banner-fixed{
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  z-index: 1039;
+  background-color: #e6f4ef;
+  border-bottom: 3px solid #047857;
+  margin: 0; padding: 0;   /* pastikan tidak ada margin collapse */
+}
+
+/* Tidak perlu lagi padding-top statis di body;
+   script di atas yang set body.style.paddingTop secara akurat */
+ /* Cegah brand membungkus & tabrakan di mobile */
+.navbar-brand { min-width: 0; }
+.brand-full { white-space: nowrap; }
+.brand-short { white-space: nowrap; }
+
+/* Kalau mau tetap pakai teks panjang di layar kecil (opsional),
+   aktifkan blok berikut dan hapus brand-short di atas:
+@media (max-width: 575.98px){
+  .brand-full{
+    font-size: .9rem;          /* kecilkan */
+    max-width: 55vw;           /* batasi lebar */
+    overflow: hidden;          /* elipsis */
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+*/
+
+/* Pastikan tinggi navbar stabil (hindari naik 2–3 baris) */
+.navbar { min-height: 56px; }
+      
+`}</style>
+    </>
   );
 }

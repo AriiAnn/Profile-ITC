@@ -35,7 +35,7 @@ export default function Pengurus() {
       {/* HERO */}
       <section
         className="py-5"
-        style={{ backgroundColor: "#e6f4ef", marginTop: "1.5rem" }}
+        style={{ backgroundColor: "#e6f4ef"}}
       >
         <div className="container text-center">
           <h1 className="h2 fw-bold mb-2">Struktur Pengurus</h1>

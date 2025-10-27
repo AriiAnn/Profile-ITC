@@ -1,9 +1,7 @@
 /* src/pages/Tentang.jsx */
 import React from "react";
-// HAPUS dua import di bawah jika Navbar/Footer sudah ada di App.jsx (Layout)
 import Navbar from "../components/Navbar";
 import NavbarBanner from "../components/NavbarBanner";
-// ----
 import logo from "../assets/logo.PNG";
 
 // === Import gambar lokal untuk galeri ===
@@ -26,22 +24,26 @@ const orgInfo = {
   legalitas: "Lembaga Kursus & Pelatihan (DIKMAS)",
 };
 
+// === Koordinat lokasi ITC ===
+const lat = 2.092678;
+const lng = 99.833186;
+
+// === URL Google Maps ===
+const gmapsEmbed = `https://www.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
+const gmapsPlace = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+const gmapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`; // otomatis arah dari posisi user
+
 export default function Tentang() {
-  // array gambar campuran: lokal + (opsional) online
-  const galeri = [
-    foto1,
-    foto2,
-    foto3, // boleh dihapus jika mau full lokal
-  ];
+  const galeri = [foto1, foto2, foto3];
 
   return (
     <main>
-      {/* HAPUS jika sudah ada di Layout */}
-      <Navbar />
-      <NavbarBanner />
 
       {/* HERO */}
-      <section style={{ backgroundColor: "#e6f4ef" }} className="py-5">
+      <section
+        style={{ backgroundColor: "#e6f4ef"}}
+        className="py-5"
+      >
         <div className="container py-3">
           <div className="row g-4 align-items-center">
             <div className="col-md-2 text-center">
@@ -54,7 +56,10 @@ export default function Tentang() {
             </div>
             <div className="col-md-10">
               <h1 className="h2 fw-bold mb-2">{orgInfo.nama}</h1>
-              <p className="lead text-secondary mb-0" style={{ maxWidth: 900 }}>
+              <p
+                className="lead text-secondary mb-0"
+                style={{ maxWidth: 900 }}
+              >
                 Lembaga kursus komputer bersertifikat yang berfokus pada
                 pembelajaran praktik, mini-project, dan pembekalan karier agar
                 lulusan siap kerja di industri digital.
@@ -158,9 +163,6 @@ export default function Tentang() {
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
-              <div className="small text-muted mt-2">
-                {/* *Ganti/ tambah foto dengan file asli di folder <code>src/assets</code>. */}
-              </div>
             </div>
 
             {/* Maps */}
@@ -169,32 +171,49 @@ export default function Tentang() {
               <div className="ratio ratio-16x9 shadow-sm rounded-3 overflow-hidden">
                 <iframe
                   title="Peta ITC Rantau Prapat"
-                  src={
-                    "https://www.google.com/maps?q=" +
-                    encodeURIComponent(orgInfo.alamat) +
-                    "&output=embed"
-                  }
+                  src={gmapsEmbed}
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <div className="mt-3">
+
+              <div className="mt-3 d-flex flex-wrap gap-2">
                 <a
-                  href="/kontak"
+                  href={gmapsDirections}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-success"
                   style={{ backgroundColor: "#047857", border: "none" }}
                 >
+                  Petunjuk Arah (Google Maps)
+                </a>
+
+                <a
+                  href={gmapsPlace}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-success"
+                  style={{ borderColor: "#047857", color: "#047857" }}
+                >
+                  Buka di Google Maps
+                </a>
+
+                <a href="/kontak" className="btn btn-light border">
                   Hubungi Kami
                 </a>
+              </div>
+
+              <div className="small text-muted mt-2">
+                Petunjuk arah otomatis terbuka di aplikasi Google Maps dengan
+                rute dari lokasi Anda ke LKP Intermedia Training Center (ITC)
+                Rantau Prapat.
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* HAPUS Footer di sini jika pakai Layout global */}
     </main>
   );
 }
