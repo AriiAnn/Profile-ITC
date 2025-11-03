@@ -16,6 +16,7 @@ import ProgramReguler from "./pages/ProgramReguler";
 import ProgramProfesional from "./pages/ProgramProfesional";
 import ProgramIndex from "./pages/ProgramIndex";
 import Galeri from "./pages/Galeri";
+import Testimoni from "./pages/Testimoni";
 
 // ===== Scroll to Top saat route berubah =====
 function ScrollToTop() {
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="/program/profesional" element={<ProgramProfesional />} />
           <Route path="/program" element={<ProgramIndex />} />
           <Route path="/galeri" element={<Galeri />} />
+           <Route path="/testimoni" element={<Testimoni />} />
 
           {/* Redirect unknown route ke Beranda */}
           <Route path="*" element={<Navigate to="/" replace />} />

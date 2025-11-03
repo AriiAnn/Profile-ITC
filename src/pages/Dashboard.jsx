@@ -7,12 +7,95 @@ import logo from "../assets/logo.PNG";
 // === Import foto lokal untuk galeri mini ===
 import gal1 from "../assets/galeri2.jpeg";
 import gal2 from "../assets/galeri1.jpeg";
-// di paling atas Dashboard.jsx
+import { FaShieldAlt, FaAward, FaCheckCircle } from "react-icons/fa";
+import isoo from "../assets/isoo.png";
 import regulerImg from "../assets/galeri2.jpeg";
 import profesiImg from "../assets/galeri1.jpeg";
 
 // Kumpulan foto galeri mini (lokal / bisa dicampur dengan URL online)
 const GALERI_MINI = [gal1, gal2];
+// === Helper: Reveal on scroll (animasi muncul saat discroll) ===
+function RevealOnScroll() {
+  React.useEffect(() => {
+    const els = document.querySelectorAll(".reveal-up");
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("show");
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+  return null;
+}
+
+// === Helper: CountTo (angka berjalan tanpa library) ===
+function CountTo({ end, duration = 1000 }) {
+  const [val, setVal] = React.useState(0);
+  React.useEffect(() => {
+    let raf;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      setVal(Math.floor(eased * end));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [end, duration]);
+  return <>{val.toLocaleString("id-ID")}</>;
+}
+
+// === Helper: StatCounters (baris statistik singkat) ===
+function StatCounters() {
+  const [start, setStart] = React.useState(false);
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStart(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (ref.current) io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+
+  const items = [
+    { label: "Alumni Terserap", value: 1200, suffix: "+", duration: 1100 },
+    { label: "Instruktur Aktif", value: 12, suffix: "", duration: 1000 },
+    // { label: "Kelas/Tahun", value: 35, suffix: "+", duration: 1050 },
+    { label: "Kepuasan Peserta", value: 98, suffix: "%", duration: 1200 },
+  ];
+
+  return (
+    <div className="container mb-4">
+      <div ref={ref} className="row g-3 justify-content-center">
+        {items.map((it, i) => (
+          <div key={i} className="col-6 col-md-3 text-center reveal-up">
+            <strong className="d-block display-6 fw-bold" style={{ letterSpacing: ".5px" }}>
+              {start ? <CountTo end={it.value} duration={it.duration} /> : 0}
+              {it.suffix}
+            </strong>
+            <small className="text-secondary">{it.label}</small>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
 export default function Dashboard() {
   return (
@@ -303,9 +386,13 @@ export default function Dashboard() {
       {/* === TESTIMONI LULUSAN (DENGAN CAROUSEL OTOMATIS) === */}
       <section className="py-5 bg-white">
         <div className="container">
-          <h2 className="h4 fw-bold mb-5 text-center text-itc">Testimoni Alumni</h2>
+          {/* Judul + Link "Lihat selengkapnya" */}
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h2 className="h4 fw-bold mb-0 text-itc">Testimoni Alumni</h2>
+            <a href="/testimoni" className="small link-itc">Lihat selengkapnya →</a>
+          </div>
 
-          <div id="carouselTestimoni" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+          <div id="carouselTestimoni" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div className="carousel-inner">
               {[
                 [
@@ -391,6 +478,11 @@ export default function Dashboard() {
               <button type="button" data-bs-target="#carouselTestimoni" data-bs-slide-to="1" aria-label="Slide 2"></button>
             </div>
           </div>
+
+          {/* Tombol besar opsional di bawah carousel */}
+          <div className="text-center mt-3">
+            <a href="/testimoni" className="btn btn-outline-itc">Lihat semua testimoni</a>
+          </div>
         </div>
 
         <style>{`
@@ -422,53 +514,110 @@ export default function Dashboard() {
 
 
 
-      {/* === KENAPA HARUS PERCAYA KAMI === */}
-      <section className="py-5 bg-light">
+      {/* === KENAPA HARUS PERCAYA KAMI (Fokus Akreditasi & ISO) === */}
+      <section className="py-5 bg-light" id="trust">
+        {/* Komponen helper untuk animasi scroll & counter */}
+        <RevealOnScroll />
+        <StatCounters />
+
         <div className="container text-center">
-          <h2 className="h4 fw-bold mb-5 text-itc">Kenapa Harus Percaya Kami?</h2>
+          <h2 className="h4 fw-bold mb-2 text-itc reveal-up">Kenapa Harus Percaya Kami?</h2>
+          <p className="text-muted mb-5 reveal-up" style={{ maxWidth: 760, margin: "0 auto" }}>
+            Akreditasi resmi & sertifikasi ISO memastikan mutu pembelajaran yang konsisten, terukur, dan profesional.
+          </p>
 
           <div className="row justify-content-center g-4">
-            <div className="col-md-5">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-success border-4">
-                <img
-                  src="/assets/akreditasi-A.png"
-                  alt="Akreditasi A"
-                  className="mb-3 rounded"
-                  style={{ maxWidth: "120px" }}
-                />
-                <h5 className="fw-bold text-itc mb-2">Terakreditasi A</h5>
-                <p className="text-muted mb-0">
-                  Lembaga kami telah mendapatkan <strong>Akreditasi “A”</strong> dari lembaga resmi pemerintah,
-                  menjamin mutu pembelajaran dan tenaga pengajar profesional.
+            {/* Card: Terakreditasi A */}
+            <div className="col-md-5 reveal-up">
+              <div className="trust-card p-4 bg-white rounded-4 shadow-sm h-100 border-start border-success border-4">
+                <div className="trust-media mb-3">
+                  <img
+                    src="/assets/akreditasi-A.png"
+                    alt="Akreditasi A"
+                    className="mb-2 trust-img"
+                    style={{ maxWidth: "120px" }}
+                  />
+                </div>
+                <h5 className="fw-bold text-itc mb-2 d-flex align-items-center justify-content-center gap-2">
+                  <FaShieldAlt aria-hidden /> Terakreditasi “A”
+                </h5>
+                <p className="text-muted mb-3">
+                  Penjaminan mutu pembelajaran & pengajar profesional sesuai standar lembaga pemerintah.
                 </p>
+
+                <div className="d-flex flex-wrap justify-content-center gap-2">
+                  <span className="badge-soft"><FaCheckCircle /> Kurikulum Terstruktur</span>
+                  <span className="badge-soft"><FaCheckCircle /> Evaluasi Berkala</span>
+                </div>
               </div>
             </div>
 
-            <div className="col-md-5">
-              <div className="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-info border-4">
-                <img
-                  src="/assets/iso-cert.png"
-                  alt="Sertifikat ISO"
-                  className="mb-3 rounded"
-                  style={{ maxWidth: "120px" }}
-                />
-                <h5 className="fw-bold text-itc mb-2">Sertifikat ISO</h5>
-                <p className="text-muted mb-0">
-                  ITC telah tersertifikasi <strong>ISO</strong> sebagai lembaga pendidikan yang memiliki
-                  sistem manajemen mutu terstandar internasional.
+            {/* Card: Sertifikasi ISO */}
+            <div className="col-md-5 reveal-up">
+              <div className="trust-card p-4 bg-white rounded-4 shadow-sm h-100 border-start border-info border-4">
+                <div className="trust-media mb-3">
+                  <img
+                    src={isoo}
+                    alt="Logo ISO"
+                    className="mb-2 trust-img"
+                    style={{ maxWidth: "120px", height: "auto", objectFit: "contain" }}
+                  />
+                </div>
+                <h5 className="fw-bold text-itc mb-2 d-flex align-items-center justify-content-center gap-2">
+                  <FaAward aria-hidden /> Sertifikasi ISO
+                </h5>
+                <p className="text-muted mb-3">
+                  Proses terdokumentasi & konsisten, mengacu standar manajemen mutu internasional.
                 </p>
+
+                <div className="d-flex flex-wrap justify-content-center gap-2">
+                  <span className="badge-soft"><FaCheckCircle /> SOP & Audit Internal</span>
+                  <span className="badge-soft"><FaCheckCircle /> Perbaikan Berkelanjutan</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Style khusus section ini (aman ditempel di sini) */}
         <style>{`
-    :root{
-      --itc-primary:#0284C7;
-    }
+    :root{ --itc-primary:#0284C7; --itc-primary-700:#0369A1; --soft:#E0F2FE; }
     .text-itc{ color: var(--itc-primary); }
+
+    /* Reveal on scroll */
+    .reveal-up{ opacity:0; transform: translateY(16px); transition: all .6s ease; }
+    .reveal-up.show{ opacity:1; transform: translateY(0); }
+
+    /* Kartu */
+    .trust-card{ position:relative; border-radius:1rem; transition: transform .25s ease, box-shadow .25s ease; }
+    .trust-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 1rem 2rem rgba(2, 132, 199, .12);
+    }
+
+    /* Logo/ikon animasi lembut */
+    .trust-media{ display:flex; justify-content:center; }
+    .trust-img{
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.08));
+    }
+    @keyframes float{
+      0%{ transform: translateY(0px); }
+      50%{ transform: translateY(-6px); }
+      100%{ transform: translateY(0px); }
+    }
+
+    /* Badges */
+    .badge-soft{
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.45rem .75rem; border-radius:999px;
+      background: var(--soft); color:#075985; font-weight:600; font-size:.85rem;
+      border:1px solid rgba(2,132,199,.2);
+    }
   `}</style>
       </section>
+
+
 
 
 

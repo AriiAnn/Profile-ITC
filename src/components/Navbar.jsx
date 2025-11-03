@@ -113,6 +113,11 @@ export default function Navbar() {
                       Galeri
                     </NavLink>
                   </li>
+                          <li>
+                    <NavLink to="/testimoni" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
+                      Testimoni
+                    </NavLink>
+                  </li>
                 </ul>
               </li>
 
