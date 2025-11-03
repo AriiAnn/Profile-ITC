@@ -5,11 +5,21 @@ import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const { pathname } = useLocation();
+
+  // ==== ACTIVE FLAGS TERPISAH ====
   const isProgramActive = pathname.startsWith("/program");
+  const isTentangActive = [
+    "/tentang",
+    "/visi-misi",
+    "/pengurus",
+    "/galeri",
+    "/testimoni",
+  ].some((p) => pathname.startsWith(p));
 
   const closeCollapse = () => {
     const el = document.getElementById("mainNav");
     try { window.bootstrap?.Collapse.getInstance(el)?.hide?.(); } catch {}
+    // Tutup dropdown yang sedang terbuka (kalau ada)
     try {
       document.querySelectorAll(".dropdown-menu.show").forEach((dm) => {
         const toggler = dm.closest(".dropdown")?.querySelector("[data-bs-toggle='dropdown']");
@@ -23,7 +33,7 @@ export default function Navbar() {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
-        style={{ backgroundColor: "#0284C7" }} // PRIMARY BLUE
+        style={{ backgroundColor: "#0284C7" }}
       >
         <div className="container">
           {/* Brand */}
@@ -40,14 +50,12 @@ export default function Navbar() {
               height="42"
               className="rounded-circle border border-light flex-shrink-0"
             />
-            {/* Versi panjang (tampil ≥576px) */}
             <span
               className="brand-full fw-bold text-uppercase d-none d-sm-inline"
               style={{ letterSpacing: "1px" }}
             >
               INTERMEDIA TRAINING CENTER
             </span>
-            {/* Versi pendek (tampil <576px) */}
             <span className="brand-short fw-bold text-uppercase d-inline d-sm-none">
               ITC
             </span>
@@ -75,11 +83,12 @@ export default function Navbar() {
                 </NavLink>
               </li>
 
-              <li className="nav-item dropdown nav-program">
+              {/* ====== TENTANG KAMI (ID & ACTIVE TERPISAH) ====== */}
+              <li className="nav-item dropdown nav-hasmenu">
                 <button
                   className={
-                    "nav-link btn w-100 text-start px-3 fw-semibold dropdown-toggle nav-program-toggle" +
-                    (isProgramActive ? " active-nav" : " hover-nav")
+                    "nav-link btn w-100 text-start px-3 fw-semibold dropdown-toggle nav-menu-toggle" +
+                    (isTentangActive ? " active-nav" : " hover-nav")
                   }
                   type="button"
                   data-bs-toggle="dropdown"
@@ -87,12 +96,12 @@ export default function Navbar() {
                   data-bs-display="static"
                   aria-expanded="false"
                   aria-haspopup="true"
-                  aria-controls="programMenu"
+                  aria-controls="tentangMenu"
                 >
                   Tentang Kami
                 </button>
 
-                <ul id="programMenu" className="dropdown-menu border-0 shadow-sm rounded-3 program-menu">
+                <ul id="tentangMenu" className="dropdown-menu border-0 shadow-sm rounded-3 menu-fly">
                   <li>
                     <NavLink to="/tentang" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
                       Tentang Kami
@@ -108,12 +117,12 @@ export default function Navbar() {
                       Pengurus
                     </NavLink>
                   </li>
-                     <li>
+                  <li>
                     <NavLink to="/galeri" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
                       Galeri
                     </NavLink>
                   </li>
-                          <li>
+                  <li>
                     <NavLink to="/testimoni" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
                       Testimoni
                     </NavLink>
@@ -121,13 +130,11 @@ export default function Navbar() {
                 </ul>
               </li>
 
-           
-
-              {/* PROGRAM */}
-              <li className="nav-item dropdown nav-program">
+              {/* ====== PROGRAM (ID & ACTIVE TERPISAH) ====== */}
+              <li className="nav-item dropdown nav-hasmenu">
                 <button
                   className={
-                    "nav-link btn w-100 text-start px-3 fw-semibold dropdown-toggle nav-program-toggle" +
+                    "nav-link btn w-100 text-start px-3 fw-semibold dropdown-toggle nav-menu-toggle" +
                     (isProgramActive ? " active-nav" : " hover-nav")
                   }
                   type="button"
@@ -141,7 +148,7 @@ export default function Navbar() {
                   Program
                 </button>
 
-                <ul id="programMenu" className="dropdown-menu border-0 shadow-sm rounded-3 program-menu">
+                <ul id="programMenu" className="dropdown-menu border-0 shadow-sm rounded-3 menu-fly">
                   <li>
                     <NavLink to="/program" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
                       Program
@@ -174,10 +181,10 @@ export default function Navbar() {
       <style>{`
 /* ================== THEME COLORS ================== */
 :root{
-  --itc-primary: #0284C7;  /* sky blue dark (match footer) */
+  --itc-primary: #0284C7;
   --itc-primary-700: #0369A1;
   --itc-primary-800: #075985;
-  --itc-soft: #E0F2FE;     /* light sky (match footer bg) */
+  --itc-soft: #E0F2FE;
 }
 
 /* ----- GLOBAL FIX untuk navbar fixed-top ----- */
@@ -187,8 +194,8 @@ body { padding-top: 76px; }
 
 /* ----- CHIP aktif/hover (gaya "pill") ----- */
 .navbar .nav-link.hover-nav:hover,
-.nav-program-toggle:hover{
-  background-color: rgba(2,132,199,.25);   /* was green -> blue */
+.nav-menu-toggle:hover{
+  background-color: rgba(2,132,199,.25);
   border-radius: .5rem;
   color: #fff !important;
 }
@@ -204,13 +211,13 @@ body { padding-top: 76px; }
 .dropdown-item.active,
 .dropdown-item:active{
   background-color: rgba(2,132,199,.18);
-  color: var(--itc-primary-800) !important; /* teks biru gelap agar kontras */
+  color: var(--itc-primary-800) !important;
 }
 
-/* ===== DESKTOP (≥992px): dropdown di BAWAH teks Program ===== */
+/* ===== DESKTOP (≥992px): dropdown tepat di bawah nav ===== */
 @media (min-width: 992px){
-  .nav-program{ position: relative; }
-  .program-menu{
+  .nav-hasmenu{ position: relative; }
+  .menu-fly{
     position: absolute;
     top: 100%;
     left: 0;
@@ -223,8 +230,8 @@ body { padding-top: 76px; }
     transform: translateY(-6px);
     transition: all .18s ease;
   }
-  .nav-program:hover > .program-menu,
-  .nav-program:focus-within > .program-menu{
+  .nav-hasmenu:hover > .menu-fly,
+  .nav-hasmenu:focus-within > .menu-fly{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -233,10 +240,10 @@ body { padding-top: 76px; }
 
 /* ===== MOBILE (<992px): dropdown TURUN + warna tema ===== */
 @media (max-width: 991.98px){
-  .program-menu{
+  .menu-fly{
     position: static !important;
     display: none;
-    background: var(--itc-primary-700);   /* was green -> blue */
+    background: var(--itc-primary-700);
     border-radius: .5rem;
     overflow: hidden;
     box-shadow: none;
@@ -245,25 +252,14 @@ body { padding-top: 76px; }
   }
   .dropdown-menu.show{ display:block; }
 
-  .program-menu .dropdown-item{ color:#E6F6FF; } /* teks terang */
-  .program-menu .dropdown-item + .dropdown-item{
+  .menu-fly .dropdown-item{ color:#E6F6FF; }
+  .menu-fly .dropdown-item + .dropdown-item{
     border-top: 1px solid rgba(255,255,255,.08);
   }
 
   /* klik area lebih nyaman */
   .navbar .nav-link,
-  .nav-program-toggle{ padding: .8rem .9rem; }
-}
-
-/* ----- Banner promosi (kalau dipakai) match tema ----- */
-.promo-banner-fixed{
-  position: fixed;
-  top: var(--nav-h, 64px);
-  left: 0; right: 0;
-  z-index: 1039;
-  background-color: var(--itc-soft);             /* #E0F2FE */
-  border-bottom: 3px solid var(--itc-primary);   /* #0284C7 */
-  margin: 0; padding: 0;
+  .nav-menu-toggle{ padding: .8rem .9rem; }
 }
 
 /* Cegah brand membungkus & tabrakan di mobile */
@@ -274,7 +270,7 @@ body { padding-top: 76px; }
 /* Tinggi navbar stabil */
 .navbar { min-height: 56px; }
 
-/* Sedikit perbaikan klik-area toggler biar lebih enak */
+/* Perbaikan klik-area toggler */
 .navbar-toggler { padding: .45rem .6rem; }
 `}</style>
     </>
