@@ -15,7 +15,7 @@ export default function Kontak() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container text-center">
           <h1 className="fw-bold mb-3">Hubungi Kami</h1>
           <p className="text-secondary mx-auto" style={{ maxWidth: 700 }}>
@@ -31,7 +31,7 @@ export default function Kontak() {
           <div className="row g-4">
             <div className="col-md-4">
               <div className="card h-100 border-0 shadow-sm text-center p-4">
-                <FaMapMarkerAlt size={28} className="mb-2 text-success" />
+                <FaMapMarkerAlt size={28} className="mb-2 icon-itc" />
                 <h6 className="fw-bold mb-1">Alamat</h6>
                 <p className="text-muted mb-0 small">
                   Jl. Padang Bulan No.13 A–C, Kel. Cendana, Rantau Utara,
@@ -41,14 +41,14 @@ export default function Kontak() {
             </div>
             <div className="col-md-4">
               <div className="card h-100 border-0 shadow-sm text-center p-4">
-                <FaPhoneAlt size={26} className="mb-2 text-success" />
+                <FaPhoneAlt size={26} className="mb-2 icon-itc" />
                 <h6 className="fw-bold mb-1">Telepon / WhatsApp</h6>
                 <p className="text-muted mb-0 small">+62 8536-2823-434</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="card h-100 border-0 shadow-sm text-center p-4">
-                <FaEnvelope size={26} className="mb-2 text-success" />
+                <FaEnvelope size={26} className="mb-2 icon-itc" />
                 <h6 className="fw-bold mb-1">Email</h6>
                 <p className="text-muted mb-0 small">
                   Intermediatcrap@gmail.com
@@ -60,9 +60,9 @@ export default function Kontak() {
       </section>
 
       {/* MEDIA SOSIAL */}
-      <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
+      <section className="py-5" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container text-center">
-          <h2 className="h5 fw-bold mb-4" style={{ color: "#047857" }}>
+          <h2 className="h5 fw-bold mb-4 text-itc">
             Temukan Kami di Media Sosial
           </h2>
           <div className="d-flex justify-content-center gap-4 flex-wrap">
@@ -112,21 +112,20 @@ export default function Kontak() {
           <div className="row align-items-center g-5">
             {/* INFO */}
             <div className="col-lg-6">
-              <h2 className="h5 fw-bold mb-3" style={{ color: "#047857" }}>
+              <h2 className="h5 fw-bold mb-3 text-itc">
                 Jam Operasional & Layanan
               </h2>
               <div className="p-4 bg-white shadow-sm rounded-3 mb-4">
-                <FaClock className="text-success mb-2" size={24} />
+                <FaClock className="icon-itc mb-2" size={24} />
                 <p className="mb-0 fw-semibold">Senin – Jumat: 08.00 – 17.00 WIB</p>
-        
-                <p className="text-muted small mb-0">Sabtu, Minggu dan hari libur: Tutup</p>
+                <p className="text-muted small mb-0">
+                  Sabtu, Minggu dan hari libur: Tutup
+                </p>
               </div>
 
-              <h6 className="fw-bold mb-3" style={{ color: "#047857" }}>
-                Admin & Pendaftaran
-              </h6>
+              <h6 className="fw-bold mb-3 text-itc">Admin & Pendaftaran</h6>
               <div className="d-flex align-items-start gap-3">
-                <FaUserTie className="text-success mt-1" size={28} />
+                <FaUserTie className="icon-itc mt-1" size={28} />
                 <div>
                   <p className="mb-1 fw-semibold">Admin ITC</p>
                   <p className="text-muted mb-0 small">
@@ -152,6 +151,16 @@ export default function Kontak() {
           </div>
         </div>
       </section>
+
+      {/* THEME (khusus halaman ini; pindahkan ke global bila sudah ada) */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-soft: #E0F2FE;      /* light sky */
+        }
+        .text-itc{ color: var(--itc-primary); }
+        .icon-itc{ color: var(--itc-primary); }
+      `}</style>
     </main>
   );
 }

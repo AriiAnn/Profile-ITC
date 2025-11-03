@@ -16,9 +16,7 @@ const SectionTitle = ({ title, subtitle }) => (
 );
 
 const PriceBadge = ({ children }) => (
-  <span className="badge rounded-pill bg-success-subtle text-success-emphasis border border-success">
-    {children}
-  </span>
+  <span className="price-badge-itc">{children}</span>
 );
 
 const Card = ({ heading, price, items }) => (
@@ -41,8 +39,8 @@ const Card = ({ heading, price, items }) => (
 
 const CtaButtons = () => (
   <div className="d-flex flex-wrap gap-2">
-    <Link to="/kontak" className="btn btn-success fw-semibold">Daftar Sekarang</Link>
-    <a href={waUrl} className="btn btn-outline-success fw-semibold" target="_blank" rel="noreferrer">
+    <Link to="/kontak" className="btn btn-itc fw-semibold">Daftar Sekarang</Link>
+    <a href={waUrl} className="btn btn-outline-itc fw-semibold" target="_blank" rel="noreferrer">
       Konsultasi via WhatsApp
     </a>
   </div>
@@ -52,7 +50,7 @@ export default function ProgramReguler() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef"}}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container py-3">
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
@@ -141,7 +139,7 @@ export default function ProgramReguler() {
       <section className="py-5">
         <div className="container">
           <SectionTitle title="Teknisi Komputer & Jaringan" subtitle="Reguler & Express" />
-        <div className="row g-4 align-items-center">
+          <div className="row g-4 align-items-center">
             <div className="col-lg-5">
               <img src={teknisiImg} alt="Teknisi Komputer dan Jaringan" className="img-fluid rounded-3 shadow-sm" />
             </div>
@@ -192,7 +190,7 @@ export default function ProgramReguler() {
             ].map((f, i) => (
               <div key={i} className="col-md-6">
                 <div className="d-flex align-items-start gap-2">
-                  <span className="badge bg-success-subtle text-success-emphasis">✓</span>
+                  <span className="badge-soft-itc">✓</span>
                   <span>{f}</span>
                 </div>
               </div>
@@ -235,6 +233,65 @@ export default function ProgramReguler() {
           <CtaButtons />
         </div>
       </section>
+
+      {/* THEME STYLE (khusus halaman ini atau pindah ke global.css) */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-primary-700: #0369A1;/* hover */
+          --itc-primary-800: #075985;/* darker text */
+          --itc-soft: #E0F2FE;      /* soft blue */
+        }
+
+        /* Buttons */
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          color: #fff;
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+          color: #fff;
+        }
+        .btn-outline-itc{
+          color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          background: transparent;
+        }
+        .btn-outline-itc:hover{
+          color: #fff;
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+
+        /* Price badge (biru subtle) */
+        .price-badge-itc{
+          display: inline-block;
+          background-color: var(--itc-soft);
+          color: var(--itc-primary-800);
+          border: 1px solid rgba(2,132,199,.35);
+          border-radius: 999px;
+          padding: .35rem .65rem;
+          font-weight: 600;
+          font-size: .85rem;
+          white-space: nowrap;
+        }
+
+        /* Checklist badge (subtle) */
+        .badge-soft-itc{
+          display: inline-block;
+          background-color: var(--itc-soft);
+          color: var(--itc-primary-800);
+          border: 1px solid rgba(2,132,199,.25);
+          border-radius: .5rem;
+          padding: .25rem .45rem;
+          font-weight: 700;
+          line-height: 1;
+          min-width: 1.5rem;
+          text-align: center;
+        }
+      `}</style>
     </main>
   );
 }

@@ -4,7 +4,7 @@ export default function NavbarBanner() {
   const [show, setShow] = useState(true);
   const bannerRef = useRef(null);
 
-  // hitung tinggi dinamis (seperti sebelumnya)
+  // hitung tinggi dinamis
   useLayoutEffect(() => {
     const root = document.documentElement;
     const nav = document.querySelector(".navbar");
@@ -48,7 +48,7 @@ export default function NavbarBanner() {
       >
         <span className="small text-dark text-center flex-grow-1">
           Selamat datang di{" "}
-          <strong style={{ color: "#065f46" }}>
+          <strong style={{ color: "#075985" }}>
             Intermedia Training Center (ITC)
           </strong>{" "}
           — program profesi komputer 1 tahun & pelatihan digital profesional.
@@ -57,7 +57,7 @@ export default function NavbarBanner() {
         <a
           href="/program"
           className="btn btn-sm text-white"
-          style={{ backgroundColor: "#047857", border: "none" }}
+          style={{ backgroundColor: "#0284C7", border: "none" }}
         >
           Lihat Program
         </a>
@@ -78,8 +78,8 @@ export default function NavbarBanner() {
           left: 0;
           right: 0;
           z-index: 1039;
-          background-color: #e6f4ef;
-          border-bottom: 3px solid #047857;
+          background-color: #E0F2FE;      /* soft blue */
+          border-bottom: 3px solid #0284C7;/* primary blue */
         }
 
         /* Tombol X lebih besar klik-areanya */
@@ -90,7 +90,7 @@ export default function NavbarBanner() {
           height: 1.5rem;
         }
         .banner-close:focus-visible {
-          outline: 2px solid #065f46;
+          outline: 2px solid #075985;     /* blue-darker focus */
           outline-offset: 2px;
         }
 

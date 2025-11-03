@@ -5,35 +5,35 @@ import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="text-dark pt-5 mt-5" style={{ backgroundColor: "#e6f4ef" }}>
+    <footer className="text-dark pt-5 mt-5" style={{ backgroundColor: "#E0F2FE" }}>
       <div className="container pb-4">
         <div className="row g-4">
           {/* ====== Kolom 1: Info Yayasan ====== */}
           <div className="col-md-4">
             <div className="d-flex align-items-center gap-2 mb-3">
               <img src={logo} alt="logo" width="45" height="45" />
-              <h5 className="fw-bold mb-0" style={{ color: "#047857" }}>
+              <h5 className="fw-bold mb-0" style={{ color: "#0284C7" }}>
                 Intermedia TRAINING CENTER
               </h5>
             </div>
             <p className="small mb-1">
-              <FaRoad className="me-2 text-success" />
+              <FaRoad className="me-2" style={{ color: "#0284C7" }} />
               Jl. Padang Bulan No.13 A–C, Rantau Prapat, Labuhanbatu, Sumatera Utara
             </p>
             <p className="small mb-1">
-              <BsTelephone className="me-2 text-success" /> +62 8536-2823-434
+              <BsTelephone className="me-2" style={{ color: "#0284C7" }} /> +62 8536-2823-434
             </p>
             <p className="small mb-1">
-              <FaEnvelope className="me-2 text-success" /> Intermediatcrap@gmail.com
+              <FaEnvelope className="me-2" style={{ color: "#0284C7" }} /> Intermediatcrap@gmail.com
             </p>
             <p className="small">
-              <FaLink className="me-2 text-success" /> www.intermedia.ac.id
+              <FaLink className="me-2" style={{ color: "#0284C7" }} /> www.intermedia.ac.id
             </p>
           </div>
 
           {/* ====== Kolom 2: Navigasi ====== */}
           <div className="col-md-4">
-            <h6 className="fw-bold mb-3" style={{ color: "#047857" }}>
+            <h6 className="fw-bold mb-3" style={{ color: "#0284C7" }}>
               Navigasi Cepat
             </h6>
             <ul className="list-unstyled small">
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* ====== Kolom 3: Tentang & Sosial Media ====== */}
           <div className="col-md-4">
-            <h6 className="fw-bold mb-3" style={{ color: "#047857" }}>
+            <h6 className="fw-bold mb-3" style={{ color: "#0284C7" }}>
               Tentang Yayasan
             </h6>
             <p className="small">
@@ -99,7 +99,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-white py-3 mt-3" style={{ backgroundColor: "#047857" }}>
+      <div className="text-center text-white py-3 mt-3" style={{ backgroundColor: "#0284C7" }}>
         <p className="mb-0 small">
           © 2025 Intermedia Training Center — Rantau Prapat. All rights reserved.
         </p>

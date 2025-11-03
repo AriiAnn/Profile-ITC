@@ -18,7 +18,7 @@ export default function ProgramProfesional() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef"}}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container py-3">
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
@@ -29,9 +29,7 @@ export default function ProgramProfesional() {
               </p>
               <div className="d-flex align-items-center gap-2 flex-wrap">
                 <span className="badge bg-warning text-dark fw-semibold">Jalur Cepat Dapat Kerja</span>
-                <span className="badge bg-success-subtle text-success-emphasis border border-success">
-                  Termasuk Uji Kompetensi
-                </span>
+                <span className="badge-soft-itc">Termasuk Uji Kompetensi</span>
               </div>
             </div>
             <div className="col-lg-5">
@@ -88,7 +86,7 @@ export default function ProgramProfesional() {
           </div>
 
           {/* Uji Kompetensi */}
-          <div className="alert alert-success mt-4 mb-0 border-0 shadow-sm">
+          <div className="alert-itc mt-4 mb-0">
             <strong>Uji Kompetensi:</strong> Peserta mengikuti asesmen kompetensi sebagai syarat kelulusan program.
           </div>
         </div>
@@ -107,7 +105,7 @@ export default function ProgramProfesional() {
             ].map((item, i) => (
               <div key={i} className="col-md-6">
                 <div className="d-flex align-items-start gap-2">
-                  <span className="badge bg-primary-subtle text-primary-emphasis">✓</span>
+                  <span className="badge-soft-itc">✓</span>
                   <span>{item}</span>
                 </div>
               </div>
@@ -135,7 +133,7 @@ export default function ProgramProfesional() {
             ].map((t, i) => (
               <div key={i} className="col-md-6">
                 <div className="d-flex align-items-start gap-2">
-                  <span className="badge bg-success-subtle text-success-emphasis">★</span>
+                  <span className="badge-soft-itc">★</span>
                   <span>{t}</span>
                 </div>
               </div>
@@ -164,7 +162,7 @@ export default function ProgramProfesional() {
             ].map((t, i) => (
               <div key={i} className="col-md-6">
                 <div className="d-flex align-items-start gap-2">
-                  <span className="badge bg-info-subtle text-info-emphasis">✓</span>
+                  <span className="badge-soft-itc">✓</span>
                   <span>{t}</span>
                 </div>
               </div>
@@ -193,19 +191,64 @@ export default function ProgramProfesional() {
       <section className="py-5 bg-light">
         <div className="container">
           <SectionTitle title="Informasi Pendaftaran" />
-          <div className="border rounded-3 p-3 bg-white shadow-sm">
+        <div className="border rounded-3 p-3 bg-white shadow-sm">
             <p className="mb-1">
               <strong>Lokasi Kampus:</strong> Jl. Padang Bulan No. 13 B–C, Rantauprapat, Kab. Labuhanbatu, Sumatera Utara
             </p>
             <p className="mb-2">
               <strong>Kontak Kantor:</strong> 0852 1880 3835
             </p>
-            <a href="/kontak" className="btn btn-success">
+            <a href="/kontak" className="btn btn-itc">
               Daftar / Konsultasi Program
             </a>
           </div>
         </div>
       </section>
+
+      {/* THEME (khusus halaman ini; pindahkan ke global jika sudah ada) */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;    /* sky blue dark */
+          --itc-primary-700: #0369A1;/* hover */
+          --itc-primary-800: #075985;/* darker text */
+          --itc-soft: #E0F2FE;       /* soft blue */
+        }
+
+        /* Buttons */
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          color:#fff;
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+          color:#fff;
+        }
+
+        /* Subtle blue badge for lists and highlights */
+        .badge-soft-itc{
+          display:inline-block;
+          background-color: var(--itc-soft);
+          color: var(--itc-primary-800);
+          border: 1px solid rgba(2,132,199,.25);
+          border-radius: 999px;
+          padding: .3rem .6rem;
+          font-weight: 600;
+          line-height: 1;
+          white-space: nowrap;
+        }
+
+        /* Blue alert (replace alert-success) */
+        .alert-itc{
+          background-color: var(--itc-soft);
+          border-left: 4px solid var(--itc-primary);
+          color: var(--itc-primary-800);
+          padding: .9rem 1rem;
+          border-radius: .5rem;
+          box-shadow: 0 .25rem .5rem rgba(0,0,0,.04);
+        }
+      `}</style>
     </main>
   );
 }

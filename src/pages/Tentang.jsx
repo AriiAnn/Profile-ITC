@@ -38,12 +38,8 @@ export default function Tentang() {
 
   return (
     <main>
-
       {/* HERO */}
-      <section
-        style={{ backgroundColor: "#e6f4ef"}}
-        className="py-5"
-      >
+      <section style={{ backgroundColor: "#E0F2FE" }} className="py-5">
         <div className="container py-3">
           <div className="row g-4 align-items-center">
             <div className="col-md-2 text-center">
@@ -56,10 +52,7 @@ export default function Tentang() {
             </div>
             <div className="col-md-10">
               <h1 className="h2 fw-bold mb-2">{orgInfo.nama}</h1>
-              <p
-                className="lead text-secondary mb-0"
-                style={{ maxWidth: 900 }}
-              >
+              <p className="lead text-secondary mb-0" style={{ maxWidth: 900 }}>
                 Lembaga kursus komputer bersertifikat yang berfokus pada
                 pembelajaran praktik, mini-project, dan pembekalan karier agar
                 lulusan siap kerja di industri digital.
@@ -112,7 +105,7 @@ export default function Tentang() {
       </section>
 
       {/* GALERI & MAPS */}
-      <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
+      <section className="py-5" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container">
           <div className="row g-4">
             {/* Galeri */}
@@ -184,8 +177,7 @@ export default function Tentang() {
                   href={gmapsDirections}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-success"
-                  style={{ backgroundColor: "#047857", border: "none" }}
+                  className="btn btn-itc text-white"
                 >
                   Petunjuk Arah (Google Maps)
                 </a>
@@ -194,8 +186,7 @@ export default function Tentang() {
                   href={gmapsPlace}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline-success"
-                  style={{ borderColor: "#047857", color: "#047857" }}
+                  className="btn btn-outline-itc"
                 >
                   Buka di Google Maps
                 </a>
@@ -214,6 +205,34 @@ export default function Tentang() {
           </div>
         </div>
       </section>
+
+      {/* THEME (khusus halaman ini, aman digabung dengan global) */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-primary-700: #0369A1;
+          --itc-soft: #E0F2FE;      /* light sky */
+        }
+
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+        }
+        .btn-outline-itc{
+          color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          background: transparent;
+        }
+        .btn-outline-itc:hover{
+          color: #fff;
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+      `}</style>
     </main>
   );
 }

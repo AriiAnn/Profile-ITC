@@ -7,7 +7,7 @@ export default function ProgramIndex() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef"}}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container py-3 text-center">
           <h1 className="h2 fw-bold mb-2">Program ITC</h1>
           <p className="lead text-secondary mb-0" style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -26,20 +26,13 @@ export default function ProgramIndex() {
               <div className="card h-100 border-0 shadow-sm overflow-hidden rounded-4">
                 <div
                   className="ratio ratio-16x9"
-                  style={{
-                    height: "230px",
-                    overflow: "hidden",
-                    backgroundColor: "#f1f5f9",
-                  }}
+                  style={{ height: "230px", overflow: "hidden", backgroundColor: "#f1f5f9" }}
                 >
                   <img
                     src={regulerImg}
                     alt="Program Reguler"
                     className="w-100 h-100"
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                 </div>
                 <div className="card-body">
@@ -54,15 +47,10 @@ export default function ProgramIndex() {
                     <li>WiFi, AC, modul, fasilitas lengkap</li>
                   </ul>
                   <div className="d-flex gap-2">
-                    <Link to="/program/reguler" className="btn btn-success px-3 fw-semibold">
+                    <Link to="/program/reguler" className="btn btn-itc px-3 fw-semibold">
                       Lihat Detail
                     </Link>
-                    {/* <Link
-                      to="/kontak"
-                      className="btn btn-outline-success px-3 fw-semibold"
-                    >
-                      Daftar / Konsultasi
-                    </Link> */}
+                    {/* <Link to="/kontak" className="btn btn-outline-itc px-3 fw-semibold">Daftar / Konsultasi</Link> */}
                   </div>
                 </div>
               </div>
@@ -73,26 +61,17 @@ export default function ProgramIndex() {
               <div className="card h-100 border-0 shadow-sm overflow-hidden rounded-4">
                 <div
                   className="ratio ratio-16x9"
-                  style={{
-                    height: "230px",
-                    overflow: "hidden",
-                    backgroundColor: "#f1f5f9",
-                  }}
+                  style={{ height: "230px", overflow: "hidden", backgroundColor: "#f1f5f9" }}
                 >
                   <img
                     src={profesiImg}
                     alt="Program Profesi"
                     className="w-100 h-100"
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                 </div>
                 <div className="card-body">
-                  <h3 className="h5 fw-bold mb-2 text-dark">
-                    Program Profesi (1 Tahun Siap Kerja)
-                  </h3>
+                  <h3 className="h5 fw-bold mb-2 text-dark">Program Profesi (1 Tahun Siap Kerja)</h3>
                   <p className="text-secondary mb-3">
                     10 bulan pendidikan + 2 bulan magang. Termasuk Uji Kompetensi.
                   </p>
@@ -102,15 +81,10 @@ export default function ProgramIndex() {
                     <li>“Jalur Cepat Dapat Kerja”</li>
                   </ul>
                   <div className="d-flex gap-2">
-                    <Link to="/program/profesional" className="btn btn-success px-3 fw-semibold">
+                    <Link to="/program/profesional" className="btn btn-itc px-3 fw-semibold">
                       Lihat Detail
                     </Link>
-                    {/* <Link
-                      to="/kontak"
-                      className="btn btn-outline-success px-3 fw-semibold"
-                    >
-                      Daftar / Konsultasi
-                    </Link> */}
+                    {/* <Link to="/kontak" className="btn btn-outline-itc px-3 fw-semibold">Daftar / Konsultasi</Link> */}
                   </div>
                 </div>
               </div>
@@ -120,7 +94,7 @@ export default function ProgramIndex() {
           {/* PERBANDINGAN SINGKAT */}
           <div className="table-responsive mt-5">
             <table className="table table-bordered align-middle shadow-sm">
-              <thead className="table-success">
+              <thead className="table-itc-head">
                 <tr>
                   <th style={{ width: "30%" }}>Aspek</th>
                   <th>Program Reguler</th>
@@ -153,6 +127,44 @@ export default function ProgramIndex() {
           </div>
         </div>
       </section>
+
+      {/* THEME (khusus halaman ini; jika sudah ada global, boleh dihapus) */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;    /* sky blue dark */
+          --itc-primary-700: #0369A1;/* hover */
+          --itc-soft: #E0F2FE;       /* soft blue */
+        }
+
+        /* Buttons */
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          color:#fff;
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+          color:#fff;
+        }
+        .btn-outline-itc{
+          color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          background: transparent;
+        }
+        .btn-outline-itc:hover{
+          color:#fff;
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+
+        /* Table header with blue theme (replace table-success) */
+        .table-itc-head > tr > th{
+          background-color: var(--itc-soft);
+          color: #0b3b5a; /* teks biru gelap ramah kontras */
+          border-bottom: 2px solid var(--itc-primary);
+        }
+      `}</style>
     </main>
   );
 }

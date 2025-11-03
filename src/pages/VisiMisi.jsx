@@ -4,7 +4,7 @@ export default function VisiMisi() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container py-3">
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
@@ -14,22 +14,6 @@ export default function VisiMisi() {
                 untuk menghasilkan talenta digital yang kompeten, beretika, dan siap kerja.
               </p>
             </div>
-            {/* <div className="col-lg-4 text-lg-end">
-              <a
-                href="/program"
-                className="btn text-white me-2"
-                style={{ backgroundColor: "#047857" }}
-              >
-                Lihat Program
-              </a>
-              <a
-                href="/kontak"
-                className="btn btn-outline-success"
-                style={{ borderColor: "#047857", color: "#047857" }}
-              >
-                Hubungi Kami
-              </a>
-            </div> */}
           </div>
         </div>
       </section>
@@ -39,7 +23,7 @@ export default function VisiMisi() {
         <div className="container">
           <div className="card border-0 shadow-sm">
             <div className="card-body p-4 p-md-5">
-              <h2 className="h5 fw-bold mb-3" style={{ color: "#047857" }}>
+              <h2 className="h5 fw-bold mb-3" style={{ color: "#0284C7" }}>
                 Visi
               </h2>
               <p className="mb-0 text-muted fs-5">
@@ -53,50 +37,44 @@ export default function VisiMisi() {
       </section>
 
       {/* MISI */}
-      <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
+      <section className="py-5" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container">
-          <h2 className="h5 fw-bold mb-3" style={{ color: "#047857" }}>
+          <h2 className="h5 fw-bold mb-3" style={{ color: "#0284C7" }}>
             Misi
           </h2>
           <div className="row g-3">
             {[
               {
-                t: "Menyiapkan sumber daya yang handal dibidang computer baik instruktur, Media pembelajaran yang sesuai dengan tuntutan jaman",
+                t: "Menyiapkan sumber daya yang handal dibidang komputer baik instruktur maupun media pembelajaran yang sesuai dengan tuntutan zaman.",
               },
               {
-                t: "Menjadi Lembaga Pendidikan berskala nasional, mengajarkan teknologi terapan, aplikasinya  yang  bermanfaat langsung bagi masyarakat. ",
-
+                t: "Menjadi lembaga pendidikan berskala nasional, mengajarkan teknologi terapan yang bermanfaat langsung bagi masyarakat.",
               },
               {
-                t: "Menjadi Lembaga Pendidikan yang menjadi manusia Kerja Cerdas, Kerja Keras, Kerja Tuntas, Kerja Ikhlas.",
-
+                t: "Menjadi lembaga pendidikan yang membentuk manusia kerja cerdas, kerja keras, kerja tuntas, dan kerja ikhlas.",
               },
               {
-                t: "Menjadi Lembaga Pendidikan yang melayani live time learning dan pusat informasi teknologi bagi masyarakat",
-
+                t: "Menjadi pusat pendidikan yang melayani lifelong learning dan menjadi pusat informasi teknologi bagi masyarakat.",
               },
               {
-                t: "Menyelenggarakan pendidikan, penelitian, dan pengabdian kepada masyarakat yang mendukung pembangunan yang relevan dengan kebutuhan masyarakat secara efektif dan efisien",
-
+                t: "Menyelenggarakan pendidikan, penelitian, dan pengabdian kepada masyarakat yang relevan dengan kebutuhan masyarakat secara efektif dan efisien.",
               },
               {
-                t: "Membentuk insan yang beretika, professional dan mengembangkan suasana dan budaya pendidik yang kondusif dan dinamis",
-
+                t: "Membentuk insan yang beretika, profesional, dan mengembangkan budaya pendidikan yang kondusif dan dinamis.",
               },
               {
-                t: "Membina peserta didik untuk berkembang menjadi tenaga professional dibidang teknologi informasi",
-
+                t: "Membina peserta didik untuk berkembang menjadi tenaga profesional di bidang teknologi informasi.",
               },
               {
-                t: "Melakukan kerjasama kemitraan yang sinergis dengan pihak lain",
-
+                t: "Melakukan kerjasama kemitraan yang sinergis dengan berbagai pihak.",
               },
             ].map((m, i) => (
               <div className="col-md-6" key={i}>
-                <div className="p-4 rounded-3 h-100 bg-white shadow-sm border-start border-4"
-                  style={{ borderColor: "#047857" }}>
+                <div
+                  className="p-4 rounded-3 h-100 bg-white shadow-sm border-start border-4"
+                  style={{ borderColor: "#0284C7" }}
+                >
                   <div className="fw-semibold mb-1">{m.t}</div>
-                  <div className="text-muted mb-0">{m.d}</div>
                 </div>
               </div>
             ))}
@@ -104,47 +82,73 @@ export default function VisiMisi() {
         </div>
       </section>
 
-
-      {/* TARGET HASIL (OUTCOMES) */}
-      <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
+      {/* TARGET HASIL */}
+      <section className="py-5" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container">
-          <h2 className="h5 fw-bold mb-3" style={{ color: "#047857" }}>
+          <h2 className="h5 fw-bold mb-3" style={{ color: "#0284C7" }}>
             Target Hasil
           </h2>
           <div className="row g-3">
             {[
-              { t: "Siap Kerja", d: "Lulusan mampu mengerjakan tugas praktis dan siap ditempatkan." },
-              { t: "Portofolio Nyata", d: "Setiap peserta memiliki karya/portofolio yang dapat ditunjukkan." },
-              { t: "Etika & Komunikasi", d: "Lulusan berperilaku profesional dan komunikatif di tempat kerja." },
-              { t: "Peningkatan Karier", d: "Alumni merasakan peningkatan peluang kerja/usaha setelah pelatihan." },
+              {
+                t: "Siap Kerja",
+                d: "Lulusan mampu mengerjakan tugas praktis dan siap ditempatkan di dunia kerja.",
+              },
+              {
+                t: "Portofolio Nyata",
+                d: "Setiap peserta memiliki karya atau portofolio yang dapat ditunjukkan.",
+              },
+              {
+                t: "Etika & Komunikasi",
+                d: "Lulusan berperilaku profesional dan komunikatif di tempat kerja.",
+              },
+              {
+                t: "Peningkatan Karier",
+                d: "Alumni merasakan peningkatan peluang kerja dan usaha setelah pelatihan.",
+              },
             ].map((o, i) => (
               <div className="col-md-6" key={i}>
-                <div className="p-4 rounded-3 h-100 bg-white shadow-sm">
+                <div className="p-4 rounded-3 h-100 bg-white shadow-sm border-start border-4"
+                  style={{ borderColor: "#0284C7" }}>
                   <div className="fw-semibold">{o.t}</div>
                   <div className="text-muted mb-0">{o.d}</div>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="text-center mt-4">
-            {/* <a
-              href="/program"
-              className="btn text-white me-2"
-              style={{ backgroundColor: "#047857" }}
-            >
-              Jelajahi Program
-            </a> */}
-            {/* <a
-              href="/kontak"
-              className="btn btn-outline-success"
-              style={{ borderColor: "#047857", color: "#047857" }}
-            >
-              Konsultasi
-            </a> */}
-          </div>
         </div>
       </section>
+
+      {/* THEME STYLE */}
+      <style>{`
+        :root {
+          --itc-primary: #0284C7;
+          --itc-primary-700: #0369A1;
+          --itc-soft: #E0F2FE;
+        }
+
+        .btn-itc {
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          color: #fff;
+        }
+
+        .btn-itc:hover {
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+        }
+
+        .btn-outline-itc {
+          border-color: var(--itc-primary);
+          color: var(--itc-primary);
+        }
+
+        .btn-outline-itc:hover {
+          background-color: var(--itc-primary);
+          color: #fff;
+          border-color: var(--itc-primary);
+        }
+      `}</style>
     </main>
   );
 }

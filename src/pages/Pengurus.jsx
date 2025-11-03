@@ -33,10 +33,7 @@ export default function Pengurus() {
   return (
     <main>
       {/* HERO */}
-      <section
-        className="py-5"
-        style={{ backgroundColor: "#e6f4ef"}}
-      >
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container text-center">
           <h1 className="h2 fw-bold mb-2">Struktur Pengurus</h1>
           <p className="text-secondary mb-0">
@@ -50,16 +47,9 @@ export default function Pengurus() {
         <div className="container">
           <div className="row g-4 justify-content-center">
             {pengurus.map((p, i) => (
-              <div
-                className="col-6 col-md-4 col-lg-3 text-center"
-                key={i}
-              >
+              <div className="col-6 col-md-4 col-lg-3 text-center" key={i}>
                 <div
-                  className="d-flex flex-column align-items-center p-3 rounded shadow-sm bg-white h-100"
-                  style={{
-                    border: "1px solid #ddd",
-                    transition: "transform 0.2s ease",
-                  }}
+                  className="pengurus-card d-flex flex-column align-items-center p-3 rounded bg-white h-100 shadow-sm"
                 >
                   <div
                     className="rounded overflow-hidden border mb-3"
@@ -67,33 +57,21 @@ export default function Pengurus() {
                       width: "100%",
                       aspectRatio: "3 / 4",
                       backgroundColor: "#f8f9fa",
-                      maxWidth: "180px", // 📸 lebih besar dari 140px
+                      maxWidth: "180px",
                     }}
                   >
                     <img
                       src={p.foto}
                       alt={p.nama}
                       className="w-100 h-100"
-                      style={{
-                        objectFit: "cover",
-                        objectPosition: "center",
-                      }}
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://picsum.photos/seed/default/300/400";
-                      }}
+                      style={{ objectFit: "cover", objectPosition: "center" }}
+                      onError={(e) => { e.currentTarget.src = "https://picsum.photos/seed/default/300/400"; }}
                     />
                   </div>
-                  <h6
-                    className="fw-bold mb-1"
-                    style={{ fontSize: "0.95rem", lineHeight: "1.3em" }}
-                  >
+                  <h6 className="fw-bold mb-1" style={{ fontSize: "0.95rem", lineHeight: "1.3em" }}>
                     {p.nama}
                   </h6>
-                  <span
-                    className="text-muted small"
-                    style={{ fontSize: "0.85rem" }}
-                  >
+                  <span className="text-muted small" style={{ fontSize: "0.85rem" }}>
                     {p.jabatan}
                   </span>
                 </div>
@@ -102,6 +80,25 @@ export default function Pengurus() {
           </div>
         </div>
       </section>
+
+      {/* THEME & CARD EFFECT */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-primary-700: #0369A1;
+          --itc-soft: #E0F2FE;      /* light sky */
+        }
+
+        .pengurus-card{
+          border: 1px solid #ddd;
+          transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+        .pengurus-card:hover{
+          transform: translateY(-2px);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.08);
+          border-color: rgba(2,132,199,.35); /* aksen biru saat hover */
+        }
+      `}</style>
     </main>
   );
 }

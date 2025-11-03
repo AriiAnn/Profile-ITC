@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  FaClock,
-} from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
 
 // ⚠️ Sesuaikan dengan nama file di /src/assets (perhatikan huruf besar-kecil)
 import logo from "../assets/logo.PNG";
@@ -13,21 +11,14 @@ import gal2 from "../assets/galeri1.jpeg";
 import regulerImg from "../assets/galeri2.jpeg";
 import profesiImg from "../assets/galeri1.jpeg";
 
-// kalau mau tambah: import gal3 from "../assets/nama-file.jpg";
-
 // Kumpulan foto galeri mini (lokal / bisa dicampur dengan URL online)
-const GALERI_MINI = [
-  gal1,
-  gal2,
-  // "https://picsum.photos/seed/itc-event/800/450", // opsional campur online
-  // gal3,
-];
+const GALERI_MINI = [gal1, gal2];
 
 export default function Dashboard() {
   return (
     <main>
       {/* HERO */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef"}}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container py-4">
           <h1 className="display-6 fw-bold text-center text-dark">
             LKP Intermedia Training Center (ITC) – Rantau Prapat
@@ -42,18 +33,10 @@ export default function Dashboard() {
           </p>
 
           <div className="d-flex justify-content-center gap-2 mt-2">
-            <a
-              href="/program"
-              className="btn text-white"
-              style={{ backgroundColor: "#047857" }}
-            >
+            <a href="/program" className="btn btn-itc text-white">
               Lihat Program
             </a>
-            <a
-              href="/kontak"
-              className="btn btn-outline-success"
-              style={{ borderColor: "#047857", color: "#047857" }}
-            >
+            <a href="/kontak" className="btn btn-outline-itc">
               Hubungi Kami
             </a>
           </div>
@@ -61,14 +44,14 @@ export default function Dashboard() {
       </section>
 
       {/* SEKILAS ITC */}
-      <section className="py-5" style={{ backgroundColor: "#e6f4ef" }}>
+      <section className="py-5" style={{ backgroundColor: "#E0F2FE" }}>
         <div className="container">
           <div className="row g-4 align-items-center">
             {/* Logo */}
             <div className="col-md-3 text-center">
               <div
                 className="p-3 rounded-3 shadow-sm bg-white"
-                style={{ border: "2px solid #047857" }}
+                style={{ border: "2px solid #0284C7" }}
               >
                 <img
                   src={logo}
@@ -89,13 +72,13 @@ export default function Dashboard() {
                 className="card border-0 shadow-sm"
                 style={{
                   backgroundColor: "white",
-                  borderLeft: "5px solid #047857",
+                  borderLeft: "5px solid #0284C7",
                 }}
               >
                 <div className="card-body">
                   <h2
                     className="h5 mb-3 fw-bold"
-                    style={{ color: "#047857", letterSpacing: "0.5px" }}
+                    style={{ color: "#0284C7", letterSpacing: "0.5px" }}
                   >
                     Sekilas ITC Rantau Prapat
                   </h2>
@@ -109,31 +92,12 @@ export default function Dashboard() {
 
                   {/* Badge / Highlight */}
                   <div className="d-flex flex-wrap gap-2 mb-3">
-                    <span
-                      className="badge rounded-pill px-3 py-2"
-                      style={{ backgroundColor: "#047857", color: "white", fontWeight: 500 }}
-                    >
-                      Praktik & Mini-Project
-                    </span>
-                    <span
-                      className="badge rounded-pill px-3 py-2"
-                      style={{ backgroundColor: "#065f46", color: "white", fontWeight: 500 }}
-                    >
-                      Link & Match
-                    </span>
-                    <span
-                      className="badge rounded-pill px-3 py-2"
-                      style={{ backgroundColor: "#059669", color: "white", fontWeight: 500 }}
-                    >
-                      Jadwal Fleksibel
-                    </span>
+                    <span className="badge-itc">Praktik & Mini-Project</span>
+                    <span className="badge-itc-dark">Link & Match</span>
+                    <span className="badge-itc-soft">Jadwal Fleksibel</span>
                   </div>
 
-                  <a
-                    href="/tentang"
-                    className="btn btn-success px-4"
-                    style={{ backgroundColor: "#047857", border: "none" }}
-                  >
+                  <a href="/tentang" className="btn btn-itc text-white px-4">
                     Lebih Lengkap
                   </a>
                 </div>
@@ -143,13 +107,12 @@ export default function Dashboard() {
         </div>
       </section>
 
-
       {/* PROGRAM UNGGULAN */}
-      <section className="py-5" style={{ backgroundColor: "#fafafa" }}>
+      <section className="py-5" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container">
           <div className="d-flex justify-content-between align-items-end mb-3">
             <h2 className="h4 mb-0">Program</h2>
-            <a href="/program" className="small text-success">Lihat semua program →</a>
+            <a href="/program" className="small link-itc">Lihat semua program →</a>
           </div>
 
           <div className="row g-4">
@@ -168,11 +131,15 @@ export default function Dashboard() {
                   <small className="text-muted d-block mb-2">
                     Administrasi Perkantoran • Desain Grafis • Teknisi Komputer & Jaringan
                   </small>
-                  <span className="badge bg-success text-white me-2">Fleksibel / Bulanan</span>
+                  <span className="badge-itc me-2">Fleksibel / Bulanan</span>
                   <span className="badge bg-secondary text-white">Full Praktik</span>
                   <div className="mt-3 d-flex gap-2">
-                    <a href="/program/reguler" className="btn btn-success">Lihat Detail</a>
-                    <a href="/kontak" className="btn btn-outline-success">Daftar / Konsultasi</a>
+                    <a href="/program/reguler" className="btn btn-itc text-white">
+                      Lihat Detail
+                    </a>
+                    <a href="/kontak" className="btn btn-outline-itc">
+                      Daftar / Konsultasi
+                    </a>
                   </div>
                 </div>
               </div>
@@ -193,11 +160,15 @@ export default function Dashboard() {
                   <small className="text-muted d-block mb-2">
                     10 Bulan Pendidikan + 2 Bulan Magang • Termasuk Uji Kompetensi
                   </small>
-                  <span className="badge bg-success text-white me-2">Jalur Cepat Dapat Kerja</span>
+                  <span className="badge-itc me-2">Jalur Cepat Dapat Kerja</span>
                   <span className="badge bg-secondary text-white">Job-Ready</span>
                   <div className="mt-3 d-flex gap-2">
-                    <a href="/program/profesional" className="btn btn-success">Lihat Detail</a>
-                    <a href="/kontak" className="btn btn-outline-success">Daftar / Konsultasi</a>
+                    <a href="/program/profesional" className="btn btn-itc text-white">
+                      Lihat Detail
+                    </a>
+                    <a href="/kontak" className="btn btn-outline-itc">
+                      Daftar / Konsultasi
+                    </a>
                   </div>
                 </div>
               </div>
@@ -205,8 +176,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-
-
 
       {/* PETA + SAMPINGNYA */}
       <section className="py-5">
@@ -220,7 +189,9 @@ export default function Dashboard() {
                   title="Peta ITC Rantau Prapat"
                   src={
                     "https://www.google.com/maps?q=" +
-                    encodeURIComponent("Jl. Padang Bulan No.13 A–C, Rantau Prapat, Kabupaten Labuhanbatu, Sumatera Utara") +
+                    encodeURIComponent(
+                      "Jl. Padang Bulan No.13 A–C, Rantau Prapat, Kabupaten Labuhanbatu, Sumatera Utara"
+                    ) +
                     "&output=embed"
                   }
                   style={{ border: 0 }}
@@ -234,10 +205,10 @@ export default function Dashboard() {
               </small>
             </div>
 
-            {/* SAMPING MAP: Tentang + Galeri Mini (pakai foto lokal) */}
+            {/* SAMPING MAP: Tentang + Galeri Mini */}
             <div className="col-lg-5">
               {/* Kartu Tentang Singkat */}
-              <div className="card border-0 shadow-sm mb-3" style={{ backgroundColor: "#e6f4ef" }}>
+              <div className="card border-0 shadow-sm mb-3" style={{ backgroundColor: "#E0F2FE" }}>
                 <div className="card-body">
                   <div className="d-flex align-items-center gap-3 mb-2">
                     <img
@@ -248,29 +219,28 @@ export default function Dashboard() {
                     />
                     <div>
                       <div className="fw-semibold">Tentang Singkat</div>
-                      <small className="text-muted">ITC – Lembaga Kursus & Pelatihan Komputer</small>
+                      <small className="text-muted">
+                        ITC – Lembaga Kursus & Pelatihan Komputer
+                      </small>
                     </div>
                   </div>
                   <p className="mb-3">
                     Berlokasi strategis di Jl. Padang Bulan No.13 A–C, ITC mendampingi peserta dari dasar
                     hingga siap kerja melalui bimbingan instruktur berpengalaman dan metode praktik.
                   </p>
-                  <a href="/tentang" className="btn btn-sm text-white" style={{ backgroundColor: "#047857" }}>
+                  <a href="/tentang" className="btn btn-sm btn-itc text-white">
                     Baca Profil Lengkap
                   </a>
                 </div>
               </div>
 
-              {/* Galeri Mini - SEKARANG pakai foto lokal dari assets */}
+              {/* Galeri Mini */}
               <div className="card border-0 shadow-sm">
                 <div className="card-body">
                   <div id="galeriMini" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner rounded">
                       {GALERI_MINI.map((src, i) => (
-                        <div
-                          key={i}
-                          className={`carousel-item ${i === 0 ? "active" : ""}`}
-                        >
+                        <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
                           <img
                             src={src}
                             className="d-block w-100"
@@ -299,9 +269,6 @@ export default function Dashboard() {
                       <span className="visually-hidden">Next</span>
                     </button>
                   </div>
-                  {/* <div className="small text-muted mt-2">
-                    *Tambahkan foto lain dengan meng-import file baru dari <code>src/assets</code> dan masukkan ke array <code>GALERI_MINI</code>.
-                  </div> */}
                 </div>
               </div>
 
@@ -309,6 +276,76 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
+
+      {/* THEME STYLES */}
+      <style>{`
+        :root{
+          --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-primary-700: #0369A1;
+          --itc-primary-800: #075985;
+          --itc-soft: #E0F2FE;      /* light sky */
+        }
+
+        /* Buttons */
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+        }
+        .btn-outline-itc{
+          color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          background: transparent;
+        }
+        .btn-outline-itc:hover{
+          color: #fff;
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+
+        /* Badges */
+        .badge-itc{
+          display:inline-block;
+          background-color: var(--itc-primary);
+          color: #fff;
+          font-weight: 500;
+          padding: .5rem .75rem;
+          border-radius: 999px;
+          font-size: .875rem;
+        }
+        .badge-itc-dark{
+          display:inline-block;
+          background-color: var(--itc-primary-800);
+          color: #fff;
+          font-weight: 500;
+          padding: .5rem .75rem;
+          border-radius: 999px;
+          font-size: .875rem;
+        }
+        .badge-itc-soft{
+          display:inline-block;
+          background-color: var(--itc-soft);
+          color: var(--itc-primary-800);
+          font-weight: 600;
+          padding: .5rem .75rem;
+          border-radius: 999px;
+          border: 1px solid rgba(2,132,199,.25);
+          font-size: .875rem;
+        }
+
+        /* Links */
+        .link-itc{
+          color: var(--itc-primary);
+          text-decoration: none;
+        }
+        .link-itc:hover{
+          color: var(--itc-primary-700);
+          text-decoration: underline;
+        }
+      `}</style>
     </main>
   );
 }
