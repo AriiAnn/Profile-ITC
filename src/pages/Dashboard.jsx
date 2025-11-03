@@ -177,7 +177,6 @@ export default function Dashboard() {
         </div>
       </section>
       {/* === CAROUSEL KEGIATAN === */}
-      {/* === CAROUSEL KEGIATAN (2 FOTO/SLIDE, RASIO 4:3) === */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="h4 fw-bold mb-4 text-center text-itc">Kegiatan di ITC</h2>
@@ -189,25 +188,25 @@ export default function Dashboard() {
                 [
                   {
                     img: gal1,
-                    title: "Pelatihan Administrasi Perkantoran",
-                    desc: "Microsoft Office, surat-menyurat & pengarsipan siap kerja.",
+                    title: "Outbond",
+                    desc: "Kegiatan outbond rutin setiap 3 bulan sekali untuk mempererat kebersamaan dan teamwork peserta ITC.",
                   },
                   {
                     img: gal2,
-                    title: "Workshop Desain Grafis",
-                    desc: "Logo, brosur, dan spanduk (CorelDraw & Photoshop).",
+                    title: "Seminar Rutin",
+                    desc: "Seminar bersama tokoh usaha atau motivator untuk menumbuhkan semangat dan wawasan kewirausahaan peserta.",
                   },
                 ],
                 [
                   {
                     img: gal1,
-                    title: "Magang Industri",
-                    desc: "Penempatan peserta di perusahaan mitra, pengalaman nyata.",
+                    title: "Program Jumat Berkah",
+                    desc: "Kegiatan berbagi nasi dan minuman setiap Jumat sebagai bentuk kepedulian sosial terhadap masyarakat sekitar.",
                   },
                   {
                     img: gal2,
-                    title: "Kegiatan Sosial",
-                    desc: "Berbagi & pengabdian masyarakat bersama peserta ITC.",
+                    title: "Wisuda Peserta ITC",
+                    desc: "Momen sakral kelulusan peserta setelah menyelesaikan program pelatihan dan uji kompetensi.",
                   },
                 ],
               ].map((slide, i) => (
