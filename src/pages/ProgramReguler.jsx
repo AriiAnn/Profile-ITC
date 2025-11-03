@@ -77,7 +77,7 @@ export default function ProgramReguler() {
               <div className="row g-3">
                 <Card
                   heading="Reguler"
-                  price="Rp 200.000 / bulan"
+                  // price="Rp 200.000 / bulan"
                   items={[
                     "Microsoft Office (Word, Excel, Ppt, Internet, dll)",
                     "2 kali pertemuan dalam seminggu",
@@ -86,7 +86,7 @@ export default function ProgramReguler() {
                 />
                 <Card
                   heading="Express"
-                  price="Rp 1.000.000"
+                  // price="Rp 1.000.000"
                   items={[
                     "Microsoft Office (Word, Excel, Ppt, Internet, dll)",
                     "Belajar selama 1,5 bulan",
@@ -112,7 +112,7 @@ export default function ProgramReguler() {
               <div className="row g-3">
                 <Card
                   heading="Reguler"
-                  price="Rp 250.000 / bulan"
+                  // price="Rp 250.000 / bulan"
                   items={[
                     "CorelDraw & Photoshop (Desain vektor, logo, brosur, stempel, spanduk, kaos, dll)",
                     "2 kali pertemuan dalam seminggu",
@@ -121,7 +121,7 @@ export default function ProgramReguler() {
                 />
                 <Card
                   heading="Express"
-                  price="Rp 1.100.000"
+                  // price="Rp 1.100.000"
                   items={[
                     "CorelDraw & Photoshop (Desain vektor, logo, brosur, stempel, spanduk, kaos, dll)",
                     "Belajar selama 1,5 bulan",
@@ -147,7 +147,7 @@ export default function ProgramReguler() {
               <div className="row g-3">
                 <Card
                   heading="Reguler"
-                  price="Rp 300.000 / bulan"
+                  // price="Rp 300.000 / bulan"
                   items={[
                     "Cisco, Maintenance, Repaired (Instalasi jaringan, merakit komputer, instalasi sistem operasi, instalasi CCTV)",
                     "2 kali pertemuan dalam seminggu",
@@ -156,7 +156,7 @@ export default function ProgramReguler() {
                 />
                 <Card
                   heading="Express"
-                  price="Rp 1.200.000"
+                
                   items={[
                     "Cisco, Maintenance, Repaired (Instalasi jaringan, merakit komputer, instalasi sistem operasi, instalasi CCTV)",
                     "Belajar selama 1,5 bulan",
@@ -218,11 +218,11 @@ export default function ProgramReguler() {
       <section className="py-5 bg-light">
         <div className="container">
           <SectionTitle title="Biaya Pendaftaran & Biaya Perlengkapan" />
-          <ul className="ps-3 mb-4">
+          {/* <ul className="ps-3 mb-4">
             <li>Uang pendaftaran: <strong>Rp 50.000</strong></li>
             <li>Uang almamater: <strong>Rp 130.000</strong></li>
             <li>Uang sertifikat: <strong>Rp 50.000</strong></li>
-          </ul>
+          </ul> */}
 
           <div className="border rounded-3 p-3 bg-white mb-3">
             <p className="mb-1"><strong>Alamat:</strong> Jl. Padang Bulan No. 13 A – C Rantauprapat</p>
@@ -265,18 +265,18 @@ export default function ProgramReguler() {
           border-color: var(--itc-primary);
         }
 
-        /* Price badge (biru subtle) */
-        .price-badge-itc{
-          display: inline-block;
-          background-color: var(--itc-soft);
-          color: var(--itc-primary-800);
-          border: 1px solid rgba(2,132,199,.35);
-          border-radius: 999px;
-          padding: .35rem .65rem;
-          font-weight: 600;
-          font-size: .85rem;
-          white-space: nowrap;
-        }
+        // /* Price badge (biru subtle) */
+        // .price-badge-itc{
+        //   display: inline-block;
+        //   background-color: var(--itc-soft);
+        //   color: var(--itc-primary-800);
+        //   border: 1px solid rgba(2,132,199,.35);
+        //   border-radius: 999px;
+        //   padding: .35rem .65rem;
+        //   font-weight: 600;
+        //   font-size: .85rem;
+        //   white-space: nowrap;
+        // }
 
         /* Checklist badge (subtle) */
         .badge-soft-itc{

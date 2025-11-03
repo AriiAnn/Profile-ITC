@@ -14,7 +14,7 @@ const SectionTitle = ({ title, subtitle }) => (
   </div>
 );
 const WA_NUMBER = "6285362518120"; // nomor WA tanpa + (pakai 62)
-const WA_TEXT = encodeURIComponent("Halo ITC, saya ingin konsultasi Program Reguler.");
+const WA_TEXT = encodeURIComponent("Halo ITC, saya ingin konsultasi Program Profesi.");
 const waUrl = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
 
 export default function ProgramProfesional() {
