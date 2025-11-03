@@ -129,7 +129,7 @@ export default function Kontak() {
                 <div>
                   <p className="mb-1 fw-semibold">Admin ITC</p>
                   <p className="text-muted mb-0 small">
-                    Telepon/WhatsApp: 0853-6282-3434<br />
+                    Telepon/WhatsApp: 0853-6251-8120<br />
                     Email: Intermediatcrap@gmail.com
                   </p>
                 </div>

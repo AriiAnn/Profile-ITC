@@ -21,7 +21,7 @@ export default function Footer() {
               Jl. Padang Bulan No.13 A–C, Rantau Prapat, Labuhanbatu, Sumatera Utara
             </p>
             <p className="small mb-1">
-              <BsTelephone className="me-2" style={{ color: "#0284C7" }} /> +62 8536-2823-434
+              <BsTelephone className="me-2" style={{ color: "#0284C7" }} /> +62 853-6251-8120
             </p>
             <p className="small mb-1">
               <FaEnvelope className="me-2" style={{ color: "#0284C7" }} /> Intermediatcrap@gmail.com

@@ -108,6 +108,11 @@ export default function Navbar() {
                       Pengurus
                     </NavLink>
                   </li>
+                     <li>
+                    <NavLink to="/galeri" className="dropdown-item py-2 fw-semibold" onClick={closeCollapse}>
+                      Galeri
+                    </NavLink>
+                  </li>
                 </ul>
               </li>
 

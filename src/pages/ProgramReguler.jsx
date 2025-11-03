@@ -4,7 +4,7 @@ import admImg from "../assets/galeri2.jpeg";     // ganti sesuai asetmu
 import desainImg from "../assets/galeri3.jpeg";  // ganti sesuai asetmu
 import teknisiImg from "../assets/galeri3.jpeg"; // disarankan beda gambar
 
-const WA_NUMBER = "6285218803835"; // nomor WA tanpa + (pakai 62)
+const WA_NUMBER = "6285362518120"; // nomor WA tanpa + (pakai 62)
 const WA_TEXT = encodeURIComponent("Halo ITC, saya ingin konsultasi Program Reguler.");
 const waUrl = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
 

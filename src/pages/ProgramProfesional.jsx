@@ -13,6 +13,9 @@ const SectionTitle = ({ title, subtitle }) => (
     {subtitle && <p className="text-secondary mb-0">{subtitle}</p>}
   </div>
 );
+const WA_NUMBER = "6285362518120"; // nomor WA tanpa + (pakai 62)
+const WA_TEXT = encodeURIComponent("Halo ITC, saya ingin konsultasi Program Reguler.");
+const waUrl = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
 
 export default function ProgramProfesional() {
   return (
@@ -191,19 +194,68 @@ export default function ProgramProfesional() {
       <section className="py-5 bg-light">
         <div className="container">
           <SectionTitle title="Informasi Pendaftaran" />
-        <div className="border rounded-3 p-3 bg-white shadow-sm">
+          <div className="border rounded-4 p-4 bg-white shadow-sm">
             <p className="mb-1">
               <strong>Lokasi Kampus:</strong> Jl. Padang Bulan No. 13 B–C, Rantauprapat, Kab. Labuhanbatu, Sumatera Utara
             </p>
-            <p className="mb-2">
+            <p className="mb-4">
               <strong>Kontak Kantor:</strong> 0852 1880 3835
             </p>
-            <a href="/kontak" className="btn btn-itc">
-              Daftar / Konsultasi Program
-            </a>
+
+            <div className="d-flex flex-wrap gap-3">
+              <a href="/kontak" className="btn btn-itc-custom d-flex align-items-center gap-2">
+                <i className="bi bi-envelope-fill"></i>
+                <span>Hubungi Kami</span>
+              </a>
+              <a
+                href={waUrl}
+                className="btn btn-wa-custom d-flex align-items-center gap-2 fw-semibold"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-whatsapp"></i>
+                <span>Konsultasi via WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
+
+        <style>{`
+    .btn-itc-custom {
+      background-color: #0284C7;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      border-radius: 0.6rem;
+      transition: all 0.25s ease;
+    }
+    .btn-itc-custom:hover {
+      background-color: #0369A1;
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    .btn-wa-custom {
+      background-color: #25D366;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.6rem;
+      transition: all 0.25s ease;
+    }
+    .btn-wa-custom:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    .bi {
+      font-size: 1.2rem;
+    }
+  `}</style>
       </section>
+
 
       {/* THEME (khusus halaman ini; pindahkan ke global jika sudah ada) */}
       <style>{`

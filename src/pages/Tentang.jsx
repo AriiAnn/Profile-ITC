@@ -14,7 +14,7 @@ const orgInfo = {
   nama: "LKP Intermedia Training Center (ITC) – Rantau Prapat",
   alamat:
     "Jl. Padang Bulan No.13 A–C, Kel. Cendana, Kec. Rantau Utara, Kab. Labuhanbatu, Sumatera Utara",
-  telepon: "+62 8536-2823-434",
+  telepon: "+62 853-6251-8120",
   email: "Intermediatcrap@gmail.com",
   website: "www.intermediajuyutama.ac.id",
   tahunBerdiri: "2017",
@@ -92,12 +92,18 @@ export default function Tentang() {
           <div className="card border-0 shadow-sm mt-4">
             <div className="card-body">
               <p className="mb-0 text-muted">
-                ITC berdiri sebagai lembaga pelatihan berbasis teknologi yang
-                menghadirkan kurikulum adaptif terhadap kebutuhan dunia kerja.
-                Kami memberikan pelatihan praktis seperti Microsoft Office
-                Advanced, Desain Grafis, Multimedia, Jaringan, dan Digital
-                Marketing. Setiap peserta difasilitasi dengan mini-project dan
-                pembimbingan karier agar siap bersaing di era digital.
+                Lembaga Pelatihan Kerja Swasta Intermedia Training Center (ITC) berdiri pada Tanggal 25 Juli 2016, beralamat di Jl. Padang Bulan No 13 C Kota Rantauprapat, Kabupaten Labuhanbatu, Provinsi Sumatera Utara, juga merupakan salah satu Lembaga Pelatihan Kerja Swasta (LPKS) yang sudah terakreditasi baik dari BAN PAUD dan PNF (Badan Akreditasi Nasional Pendidikan Anak Usia Dini dan Pendidikan Non Formal) maupun dari LA-LPK (Lembaga Akreditasi – Lembaga Pelatihan Kerja) Nomor : 623/LA-LPK/XII/2020. yang bergerak di bidang Jasa Pendidikan Pelatihan Komputer. Dididik oleh tenaga pendidik/instruktur-instruktur yang professional, Berpengalaman dan kompeten dibidangnya, Juga bersertfikasi oleh BNSP (Badan Nasional Sertifikasi Profesi) Serta Seminar Rutin oleh motivator dan pemateri yang berpengalaman.
+              
+              </p>
+              <br />
+
+              <p className="mb-0 text-muted">
+                ITC menyediakan Pelatihan Kursus 1 Bulan, 3 Bulan untuk anak-anak Sekolah yaitu Program Administrasi Perkantoran, Desain Grafis, Teknik Komputer dan Jaringan Serta Kejuruan Unggulan yaitu Pelatihan Profesi Komputer 1 Tahun Siap Kerja (10 Bulan Pelatihan dan 2 Bulan Magang Di Dunia Usaha/Industri, Perusahaan, dan Instansi Pemerintahan/Swasta) khusus para Peserta yang baru tamat sekolah, pencari kerja, ataupun yang sudah tidak bekerja lagi, . Setelah menyelesaikan Pelatihan tentunya siswa/i akan diberikan sertifikat pelatihan kompetensi sesuai program yang diikuti dan Diwisudakan.
+              
+              </p>
+<br />
+              <p className="mb-0 text-muted">
+                Fasilitas yang didapat ketika belajar di ITC yaitu adalah Ruang Belajar nyaman, aman, sehat dan kondusif serta berdayaguna, Parkiran aman yang dilenkapi CCTV dan pelayanan Satpam, Ruang Full AC, Baju Dinas dan Atribut untuk Peserta Profesi Komputer Siap Kerja (10 Bulan Pelatihan dan 2 Bulan Magang Di Dunia Usaha/Industri, Perusahaan, dan Instansi Pemerintahan ataupun Swasta) , Ruang Ibadah Manajemen dan Peserta Pelatihan, Ruang Tunggu, Peralatan Praktek yang memadai, juga terbentuknya kawasan “Zero Tolerance” yaitu kawasan tanpa rokok, alkohol dan napza, serta kawasan bebas kekerasan.
               </p>
             </div>
           </div>
