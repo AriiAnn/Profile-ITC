@@ -1,3 +1,4 @@
+// src/pages/Kontak.jsx
 import React from "react";
 import {
   FaMapMarkerAlt,
@@ -10,6 +11,15 @@ import {
   FaClock,
   FaUserTie,
 } from "react-icons/fa";
+
+// === Koordinat lokasi ITC (sama seperti di Tentang.jsx) ===
+const lat = 2.092678;
+const lng = 99.833186;
+
+// === URL Google Maps ===
+const gmapsEmbed = `https://www.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
+const gmapsPlace = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+const gmapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`; // otomatis arah dari posisi user
 
 export default function Kontak() {
   return (
@@ -117,7 +127,9 @@ export default function Kontak() {
               </h2>
               <div className="p-4 bg-white shadow-sm rounded-3 mb-4">
                 <FaClock className="icon-itc mb-2" size={24} />
-                <p className="mb-0 fw-semibold">Senin – Jumat: 08.00 – 17.00 WIB</p>
+                <p className="mb-0 fw-semibold">
+                  Senin – Jumat: 08.00 – 17.00 WIB
+                </p>
                 <p className="text-muted small mb-0">
                   Sabtu, Minggu dan hari libur: Tutup
                 </p>
@@ -129,23 +141,53 @@ export default function Kontak() {
                 <div>
                   <p className="mb-1 fw-semibold">Admin ITC</p>
                   <p className="text-muted mb-0 small">
-                    Telepon/WhatsApp: 0853-6251-8120<br />
+                    Telepon/WhatsApp: 0853-6251-8120
+                    <br />
                     Email: Intermediatcrap@gmail.com
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* MAPS */}
+            {/* MAPS + PETUNJUK ARAH (seperti di Tentang.jsx) */}
             <div className="col-lg-6">
+              <h2 className="h5 fw-bold mb-3 text-itc">Lokasi Kami</h2>
               <div className="ratio ratio-16x9 shadow-sm rounded-3 overflow-hidden">
                 <iframe
                   title="Lokasi ITC Rantau Prapat"
-                  src="https://www.google.com/maps?q=LKP+Intermedia+Training+Center,+Rantau+Prapat&output=embed"
+                  src={gmapsEmbed}
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+
+              <div className="mt-3 d-flex flex-wrap gap-2">
+                <a
+                  href={gmapsDirections}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-itc text-white"
+                >
+                  Petunjuk Arah (Google Maps)
+                </a>
+
+                <a
+                  href={gmapsPlace}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-itc"
+                >
+                  Buka di Google Maps
+                </a>
+
+              </div>
+
+              <div className="small text-muted mt-2">
+                Tombol <strong>Petunjuk Arah</strong> akan membuka aplikasi
+                Google Maps dengan rute dari lokasi Anda ke LKP Intermedia
+                Training Center (ITC) Rantau Prapat.
               </div>
             </div>
           </div>
@@ -156,10 +198,30 @@ export default function Kontak() {
       <style>{`
         :root{
           --itc-primary: #0284C7;   /* sky blue dark */
+          --itc-primary-700: #0369A1;
           --itc-soft: #E0F2FE;      /* light sky */
         }
         .text-itc{ color: var(--itc-primary); }
         .icon-itc{ color: var(--itc-primary); }
+
+        .btn-itc{
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
+        .btn-itc:hover{
+          background-color: var(--itc-primary-700);
+          border-color: var(--itc-primary-700);
+        }
+        .btn-outline-itc{
+          color: var(--itc-primary);
+          border-color: var(--itc-primary);
+          background: transparent;
+        }
+        .btn-outline-itc:hover{
+          color: #fff;
+          background-color: var(--itc-primary);
+          border-color: var(--itc-primary);
+        }
       `}</style>
     </main>
   );

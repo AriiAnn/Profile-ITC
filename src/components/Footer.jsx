@@ -103,8 +103,8 @@ export default function Footer() {
         <p className="mb-0 small">
           © 2025 Intermedia Training Center — Rantau Prapat. All rights reserved.
         </p>
-        <p className="mb-0 small text-white-50">
-          Designed & Developed by Ariansyah
+       <p className="mb-0 small text-white-50">
+          Made with ❤️
         </p>
       </div>
     </footer>
