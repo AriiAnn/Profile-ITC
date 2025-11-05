@@ -39,7 +39,7 @@ const Card = ({ heading, price, items }) => (
 
 const CtaButtons = () => (
   <div className="d-flex flex-wrap gap-2">
-    <Link to="/kontak" className="btn btn-itc fw-semibold">Daftar Sekarang</Link>
+    <Link to="/kontak" className="btn btn-itc fw-semibold">Hubungi Kami</Link>
     <a href={waUrl} className="btn btn-outline-itc fw-semibold" target="_blank" rel="noreferrer">
       Konsultasi via WhatsApp
     </a>
