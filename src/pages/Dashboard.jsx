@@ -6,14 +6,17 @@ import logo from "../assets/logo.PNG";
 
 // === Import foto lokal untuk galeri mini ===
 import gal1 from "../assets/galeri2.jpeg";
-import gal2 from "../assets/galeri1.jpeg";
+import gal2 from "../assets/SARPRAS/gal5.jpg";
+import gal3 from "../assets/SARPRAS/gal2.jpg";
+import gal4 from "../assets/SARPRAS/gal3.jpg";
 import { FaShieldAlt, FaAward, FaCheckCircle } from "react-icons/fa";
 import isoo from "../assets/isoo.png";
 import regulerImg from "../assets/galeri2.jpeg";
 import profesiImg from "../assets/galeri1.jpeg";
+import akreditasi from "../assets/akreditasi.png";
 
 // Kumpulan foto galeri mini (lokal / bisa dicampur dengan URL online)
-const GALERI_MINI = [gal1, gal2];
+const GALERI_MINI = [ gal2, gal3, gal4 ,gal1];
 // === Helper: Reveal on scroll (animasi muncul saat discroll) ===
 function RevealOnScroll() {
   React.useEffect(() => {
@@ -163,26 +166,62 @@ export default function Dashboard() {
                     className="h5 mb-3 fw-bold"
                     style={{ color: "#0284C7", letterSpacing: "0.5px" }}
                   >
-                    Sekilas ITC Rantau Prapat
+                    Sekilas ITC Business School
                   </h2>
+
                   <p className="text-muted mb-3">
-                    ITC merupakan lembaga kursus komputer yang menyediakan pelatihan
-                    terapan seperti Microsoft Office Advanced, desain grafis dasar,
-                    jaringan & troubleshooting, multimedia, serta digital marketing.
-                    Pembelajaran dirancang <strong>berorientasi praktik</strong> dengan
-                    mini-project dan pendampingan karier.
+                    ITC Business School adalah lembaga pendidikan dan pelatihan di bawah
+                    naungan Yayasan Pendidikan Komputer Intermedia Jaya Utama yang berfokus
+                    pada pengembangan kompetensi di bidang teknologi, bisnis, dan administrasi
+                    modern. Kami hadir sebagai solusi bagi generasi muda yang ingin siap
+                    menghadapi dunia kerja dengan keterampilan nyata dan sertifikasi resmi.
+                  </p>
+
+                  <p className="text-muted mb-3">
+                    Di era persaingan global saat ini, ijazah saja tidak lagi cukup. Setiap
+                    individu dituntut untuk kompeten, terampil, dan memiliki sertifikat
+                    keahlian yang diakui. Melalui program unggulan seperti{" "}
+                    <strong>Administrasi Perkantoran</strong>,{" "}
+                    <strong>Teknik Komputer</strong>, <strong>Desain Grafis</strong>,{" "}
+                    <strong>Digital Marketing</strong>, dan{" "}
+                    <strong>Operator Komputer Muda</strong>, ITC Business School membantu
+                    peserta didik menyesuaikan diri dengan kebutuhan industri masa kini.
+                  </p>
+
+                  <p className="text-muted mb-3">
+                    Bagi lulusan baru atau pencari kerja yang masih bingung menentukan arah
+                    karier, ITC Business School menjadi tempat terbaik untuk menemukan potensi
+                    diri, meningkatkan keahlian, dan mempersiapkan masa depan yang lebih pasti.
                   </p>
 
                   {/* Badge / Highlight */}
-                  <div className="d-flex flex-wrap gap-2 mb-3">
+                  <div className="d-flex flex-wrap gap-2 mb-2">
                     <span className="badge-itc">Praktik & Mini-Project</span>
                     <span className="badge-itc-dark">Link & Match</span>
                     <span className="badge-itc-soft">Jadwal Fleksibel</span>
                   </div>
 
-                  <a href="/tentang" className="btn btn-itc text-white px-4">
+                  {/* Hashtag / tagline */}
+                  <div className="d-flex flex-wrap gap-2 mt-2">
+                    {[
+                      "#BelajarBerkaryaBerkarier",
+                      "#SiapKerjaSiapUsaha",
+                      "#GenerasiKompeten",
+                      "#PelatihanKerjaBersertifikat",
+                      "#LembagaPelatihanProfesional",
+                      "#PendidikanBerkualitas",
+                      "#SkillUntukMasaDepan",
+                    ].map((tag) => (
+                      <span key={tag} className="hashtag-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a href="/tentang" className="btn btn-itc text-white px-4 mt-3">
                     Lebih Lengkap
                   </a>
+
                 </div>
               </div>
             </div>
@@ -521,9 +560,16 @@ export default function Dashboard() {
         <StatCounters />
 
         <div className="container text-center">
-          <h2 className="h4 fw-bold mb-2 text-itc reveal-up">Kenapa Harus Percaya Kami?</h2>
-          <p className="text-muted mb-5 reveal-up" style={{ maxWidth: 760, margin: "0 auto" }}>
-            Akreditasi resmi & sertifikasi ISO memastikan mutu pembelajaran yang konsisten, terukur, dan profesional.
+          <h2 className="h4 fw-bold mb-2 text-itc reveal-up">
+            Kenapa Harus Percaya Kami?
+          </h2>
+          <p
+            className="text-muted mb-5 reveal-up"
+            style={{ maxWidth: 760, margin: "0 auto" }}
+          >
+            Akreditasi resmi & sertifikasi ISO memastikan mutu pembelajaran
+            yang konsisten, terukur, dan profesional di setiap program ITC
+            Business School.
           </p>
 
           <div className="row justify-content-center g-4">
@@ -532,22 +578,28 @@ export default function Dashboard() {
               <div className="trust-card p-4 bg-white rounded-4 shadow-sm h-100 border-start border-success border-4">
                 <div className="trust-media mb-3">
                   <img
-                    src="/assets/akreditasi-A.png"
-                    alt="Akreditasi A"
-                    className="mb-2 trust-img"
-                    style={{ maxWidth: "120px" }}
+                    src={akreditasi}
+                    alt="Sertifikat Akreditasi ITC"
+                    className="trust-img"
                   />
                 </div>
+
                 <h5 className="fw-bold text-itc mb-2 d-flex align-items-center justify-content-center gap-2">
                   <FaShieldAlt aria-hidden /> Terakreditasi “A”
                 </h5>
                 <p className="text-muted mb-3">
-                  Penjaminan mutu pembelajaran & pengajar profesional sesuai standar lembaga pemerintah.
+                  Penjaminan mutu pembelajaran dan pengajar profesional sesuai
+                  standar lembaga pemerintah, melalui evaluasi berkala dan
+                  instrumen penilaian yang terukur.
                 </p>
 
                 <div className="d-flex flex-wrap justify-content-center gap-2">
-                  <span className="badge-soft"><FaCheckCircle /> Kurikulum Terstruktur</span>
-                  <span className="badge-soft"><FaCheckCircle /> Evaluasi Berkala</span>
+                  <span className="badge-soft">
+                    <FaCheckCircle /> Kurikulum Terstruktur
+                  </span>
+                  <span className="badge-soft">
+                    <FaCheckCircle /> Evaluasi Berkala
+                  </span>
                 </div>
               </div>
             </div>
@@ -559,20 +611,26 @@ export default function Dashboard() {
                   <img
                     src={isoo}
                     alt="Logo ISO"
-                    className="mb-2 trust-img"
-                    style={{ maxWidth: "120px", height: "auto", objectFit: "contain" }}
+                    className="trust-img"
                   />
                 </div>
+
                 <h5 className="fw-bold text-itc mb-2 d-flex align-items-center justify-content-center gap-2">
                   <FaAward aria-hidden /> Sertifikasi ISO
                 </h5>
                 <p className="text-muted mb-3">
-                  Proses terdokumentasi & konsisten, mengacu standar manajemen mutu internasional.
+                  Proses lembaga terdokumentasi & konsisten, mengacu standar
+                  manajemen mutu internasional sehingga layanan pelatihan tetap
+                  stabil dan terus ditingkatkan.
                 </p>
 
                 <div className="d-flex flex-wrap justify-content-center gap-2">
-                  <span className="badge-soft"><FaCheckCircle /> SOP & Audit Internal</span>
-                  <span className="badge-soft"><FaCheckCircle /> Perbaikan Berkelanjutan</span>
+                  <span className="badge-soft">
+                    <FaCheckCircle /> SOP & Audit Internal
+                  </span>
+                  <span className="badge-soft">
+                    <FaCheckCircle /> Perbaikan Berkelanjutan
+                  </span>
                 </div>
               </div>
             </div>
@@ -581,40 +639,80 @@ export default function Dashboard() {
 
         {/* Style khusus section ini (aman ditempel di sini) */}
         <style>{`
-    :root{ --itc-primary:#0284C7; --itc-primary-700:#0369A1; --soft:#E0F2FE; }
-    .text-itc{ color: var(--itc-primary); }
+          .text-itc{
+            color: #0284C7;
+          }
 
-    /* Reveal on scroll */
-    .reveal-up{ opacity:0; transform: translateY(16px); transition: all .6s ease; }
-    .reveal-up.show{ opacity:1; transform: translateY(0); }
+          /* Reveal on scroll */
+          .reveal-up{
+            opacity:0;
+            transform: translateY(16px);
+            transition: all .6s ease;
+          }
+          .reveal-up.show{
+            opacity:1;
+            transform: translateY(0);
+          }
 
-    /* Kartu */
-    .trust-card{ position:relative; border-radius:1rem; transition: transform .25s ease, box-shadow .25s ease; }
-    .trust-card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 1rem 2rem rgba(2, 132, 199, .12);
-    }
+          /* Kartu utama */
+          .trust-card{
+            position:relative;
+            border-radius:1rem;
+            transition: transform .25s ease, box-shadow .25s ease;
+          }
+          .trust-card:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 1rem 2rem rgba(2,132,199,.12);
+          }
 
-    /* Logo/ikon animasi lembut */
-    .trust-media{ display:flex; justify-content:center; }
-    .trust-img{
-      animation: float 6s ease-in-out infinite;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,.08));
-    }
-    @keyframes float{
-      0%{ transform: translateY(0px); }
-      50%{ transform: translateY(-6px); }
-      100%{ transform: translateY(0px); }
-    }
+          /* Wrapper logo */
+          .trust-media{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height: 200px;
+          }
 
-    /* Badges */
-    .badge-soft{
-      display:inline-flex; align-items:center; gap:.4rem;
-      padding:.45rem .75rem; border-radius:999px;
-      background: var(--soft); color:#075985; font-weight:600; font-size:.85rem;
-      border:1px solid rgba(2,132,199,.2);
-    }
-  `}</style>
+          /* Ukuran gambar diseragamkan */
+          .trust-img{
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 6px 14px rgba(0,0,0,.08));
+          }
+
+          @keyframes float{
+            0%{ transform: translateY(0px); }
+            50%{ transform: translateY(-6px); }
+            100%{ transform: translateY(0px); }
+          }
+
+          /* Badge soft (chip kecil biru lembut) */
+          .badge-soft{
+            display:inline-flex;
+            align-items:center;
+            gap:.4rem;
+            padding:.45rem .75rem;
+            border-radius:999px;
+            background:#E0F2FE;
+            color:#075985;
+            font-weight:600;
+            font-size:.85rem;
+            border:1px solid rgba(2,132,199,.2);
+          }
+
+          /* Responsif: kecilkan logo di HP */
+          @media (max-width: 576px){
+            .trust-img{
+              width: 140px;
+              height: 140px;
+            }
+            .trust-media{
+              min-height: 160px;
+            }
+          }
+        `}</style>
       </section>
 
 
@@ -790,6 +888,15 @@ export default function Dashboard() {
           color: var(--itc-primary-700);
           text-decoration: underline;
         }
+          .hashtag-pill{
+  font-size: .75rem;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  background-color: rgba(2,132,199,.06);
+  color: #0369A1;
+  border: 1px dashed rgba(2,132,199,.35);
+}
+
       `}</style>
     </main>
   );

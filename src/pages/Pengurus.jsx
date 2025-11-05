@@ -12,12 +12,16 @@ import devi from "../assets/pengurus/devi.jpeg";
 import fandu from "../assets/pengurus/fandu.jpeg";
 import febri from "../assets/pengurus/febri.jpeg";
 import geo from "../assets/pengurus/geo.jpeg";
+import trisa from "../assets/pengurus/trisa.jpeg";
+import zulham from "../assets/pengurus/zulham.jpeg";
 
 const pengurus = [
   { nama: "Muhammad Fitra, S.E., M.M., C.STMI., C.SM", jabatan: "Ketua Dewan Pembina Yayasan", foto: fitra },
   { nama: "Fandu Oktori Sukoto, A.Md.Kom", jabatan: "Direktur", foto: fandu },
-  { nama: "Sheila Farda Murti", jabatan: "Ka. Prog. Prog. Bisnis dan Teknologi Informasi", foto: sheila },
-  { nama: "Cici Dihda Anggriani, S.M", jabatan: "Ka. Prog. APK Perkantoran", foto: cici },
+  { nama: "Zulham Ali Irwansyah, S.S", jabatan: "Sekretaris", foto: zulham },
+  { nama: "Trisa Retnawati", jabatan: "Bendahara", foto: trisa },
+  { nama: "Sheila Farda Murti", jabatan: "Ka. Prog. Prfesi 1 tahun siap kerja", foto: sheila },
+  { nama: "Cici Dinda Anggriani, S.M", jabatan: "Ka. Prog. Manajemen Bisnis dan Teknologi Informasi", foto: cici },
   { nama: "Sri Devi Pasaribu, S.E", jabatan: "Administrasi Umum", foto: devi },
   { nama: "Mustapa Ali Hasibuan", jabatan: "Instruktur Profesi", foto: mustapa },
   { nama: "Hafifa Nurul Kinasih", jabatan: "Instruktur Profesi", foto: hafifa },
@@ -25,7 +29,7 @@ const pengurus = [
   { nama: "Novika Rhami", jabatan: "Instruktur Reguler", foto: novika },
   { nama: "Nazwa Prilya Andita S", jabatan: "Instruktur Reguler", foto: nazwa },
   { nama: "Mahjuro", jabatan: "Instruktur Reguler", foto: mahjuro },
-  { nama: "Mhd. Febry Wijaya", jabatan: "Instruktur TKJ", foto: febri },
+  { nama: "Mhd. Febry Wijaya", jabatan: "Instruktur Teknik Komputer dan Jaringan", foto: febri },
   { nama: "Samsul Hadi", jabatan: "Security", foto: hadi },
 ];
 

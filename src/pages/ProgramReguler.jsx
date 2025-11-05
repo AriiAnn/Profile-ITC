@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import admImg from "../assets/galeri2.jpeg";     // ganti sesuai asetmu
-import desainImg from "../assets/galeri3.jpeg";  // ganti sesuai asetmu
+import desainImg from "../assets/desain/desain2.jpeg";  // ganti sesuai asetmu
 import teknisiImg from "../assets/galeri3.jpeg"; // disarankan beda gambar
 
 const WA_NUMBER = "6285362518120"; // nomor WA tanpa + (pakai 62)

@@ -120,7 +120,7 @@ export default function ProgramProfesional() {
       {/* KEUNTUNGAN MEMILIH PROGRAM (dari brosur) */}
       <section className="py-5">
         <div className="container">
-          <SectionTitle title="Keuntungan Memilih Program Profesi 1 Tahun" subtitle="Ringkasan poin dari brosur" />
+          <SectionTitle title="Keuntungan Memilih Program Profesi 1 Tahun"  />
           <div className="row g-3">
             {[
               "Lembaga Pendidikan Komputer pertama di Sumut yang bersertifikat internasional.",

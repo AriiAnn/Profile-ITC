@@ -8,6 +8,7 @@ import g3 from "../assets/galeri3.jpeg";
 import g4 from "../assets/galeri3.jpeg";
 import g5 from "../assets/galeri3.jpeg";
 import g6 from "../assets/galeri3.jpeg";
+import buka1 from "../assets/FOTO GEDUNG _ SPANDUK/bukaan.jpg";
 
 /**
  * Satu judul bisa punya beberapa foto
@@ -36,7 +37,7 @@ const DATA = [
   {
     title: "Berbagi Bukaan Puasa",
     desc: "Program berbagi takjil dan bukaan puasa di bulan Ramadan untuk mempererat kebersamaan antar sesama.",
-    photos: [g5, g2],
+    photos: [buka1],
   },
   {
     title: "Peduli Masjid & Mushalla Pedalaman",

@@ -44,7 +44,7 @@ export default function Kontak() {
                 <FaMapMarkerAlt size={28} className="mb-2 icon-itc" />
                 <h6 className="fw-bold mb-1">Alamat</h6>
                 <p className="text-muted mb-0 small">
-                  Jl. Padang Bulan No.13 A–C, Kel. Cendana, Rantau Utara,
+                  Jl. Padang Bulan No.13 A–C, Kel. Padang Bulan, Rantau Utara,
                   Kab. Labuhanbatu, Sumatera Utara
                 </p>
               </div>
@@ -128,7 +128,10 @@ export default function Kontak() {
               <div className="p-4 bg-white shadow-sm rounded-3 mb-4">
                 <FaClock className="icon-itc mb-2" size={24} />
                 <p className="mb-0 fw-semibold">
-                  Senin – Jumat: 08.00 – 17.00 WIB
+                  Senin – Kamis: 08.00 – 21.00 WIB
+                </p>
+                <p className="mb-0 fw-semibold">
+                  Jumat: 14.00 – 17.00 WIB
                 </p>
                 <p className="text-muted small mb-0">
                   Sabtu, Minggu dan hari libur: Tutup
