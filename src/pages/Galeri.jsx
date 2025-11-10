@@ -9,6 +9,11 @@ import g4 from "../assets/galeri3.jpeg";
 import g5 from "../assets/galeri3.jpeg";
 import g6 from "../assets/galeri3.jpeg";
 import buka1 from "../assets/FOTO GEDUNG _ SPANDUK/bukaan.jpg";
+import wis1 from "../assets/wisuda/wis1.jpg";
+import wis2 from "../assets/wisuda/wis2.jpg";
+import wis3 from "../assets/wisuda/wis3.jpg";
+import jum1 from "../assets/jumat berkah/1.jpg";
+import jum2 from "../assets/jumat berkah/2.jpg";
 
 /**
  * Satu judul bisa punya beberapa foto
@@ -27,12 +32,12 @@ const DATA = [
   {
     title: "Program Jumat Berkah",
     desc: "Kegiatan berbagi nasi dan minuman setiap Jumat sebagai bentuk kepedulian sosial terhadap masyarakat sekitar.",
-    photos: [g3, g4],
+    photos: [jum1, jum2],
   },
   {
     title: "Wisuda Peserta ITC",
     desc: "Momen sakral kelulusan peserta setelah menyelesaikan program pelatihan dan uji kompetensi.",
-    photos: [g4, g5, g6],
+    photos: [wis1, wis2, wis3],
   },
   {
     title: "Berbagi Bukaan Puasa",

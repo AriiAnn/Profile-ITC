@@ -6,7 +6,7 @@ import logo from "../assets/logo.PNG";
 
 // === Import foto lokal untuk galeri mini ===
 import gal1 from "../assets/galeri2.jpeg";
-import gal2 from "../assets/SARPRAS/gal5.jpg";
+import gal2 from "../assets/SARPRAS/gal6.jpg";
 import gal3 from "../assets/SARPRAS/gal2.jpg";
 import gal4 from "../assets/SARPRAS/gal3.jpg";
 import { FaShieldAlt, FaAward, FaCheckCircle } from "react-icons/fa";
