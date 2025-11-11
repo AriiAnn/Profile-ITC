@@ -9,14 +9,26 @@ import gal1 from "../assets/galeri2.jpeg";
 import gal2 from "../assets/SARPRAS/gal6.jpg";
 import gal3 from "../assets/SARPRAS/gal2.jpg";
 import gal4 from "../assets/SARPRAS/gal3.jpg";
+import outbond from "../assets/outbond/1.jpeg";
+import seminar from "../assets/seminar/3.jpeg";
+import jumat from "../assets/jumat berkah/2.jpg";
+import wisuda from "../assets/wisuda/wis2.jpg";
 import { FaShieldAlt, FaAward, FaCheckCircle } from "react-icons/fa";
 import isoo from "../assets/isoo.png";
 import regulerImg from "../assets/galeri2.jpeg";
 import profesiImg from "../assets/galeri1.jpeg";
 import akreditasi from "../assets/akreditasi.png";
+import suci from "../assets/testimoni/suci.jpeg";
+import dea from "../assets/testimoni/dea.jpeg";
+import tuah from "../assets/testimoni/tuah.jpeg";
+import febriela from "../assets/testimoni/febriela.jpeg";
+import mahjiro from "../assets/testimoni/mahjiro.jpeg";
+import nurhalimah from "../assets/testimoni/nurhalimah.jpeg";
+import sri from "../assets/testimoni/sri.jpeg";
+import winda from "../assets/testimoni/tuah.jpeg";
 
 // Kumpulan foto galeri mini (lokal / bisa dicampur dengan URL online)
-const GALERI_MINI = [ gal2, gal3, gal4 ,gal1];
+const GALERI_MINI = [gal2, gal3, gal4, gal1];
 // === Helper: Reveal on scroll (animasi muncul saat discroll) ===
 function RevealOnScroll() {
   React.useEffect(() => {
@@ -301,7 +313,12 @@ export default function Dashboard() {
       {/* === CAROUSEL KEGIATAN === */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="h4 fw-bold mb-4 text-center text-itc">Kegiatan di ITC</h2>
+          <div className="text-center mb-4">
+            <h2 className="h4 fw-bold text-itc mb-1">Kegiatan di ITC</h2>
+            <p className="text-muted mb-0" style={{ maxWidth: 640, margin: "0 auto" }}>
+              Cuplikan suasana outbond, seminar, program sosial, dan momen wisuda peserta ITC.
+            </p>
+          </div>
 
           <div id="carouselKegiatan" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner rounded-4 shadow-sm">
@@ -309,24 +326,24 @@ export default function Dashboard() {
               {[
                 [
                   {
-                    img: gal1,
+                    img: outbond,
                     title: "Outbond",
-                    desc: "Kegiatan outbond rutin setiap 3 bulan sekali untuk mempererat kebersamaan dan teamwork peserta ITC.",
+                    desc: "Outbond rutin setiap 3 bulan sekali untuk mempererat kebersamaan dan teamwork peserta ITC.",
                   },
                   {
-                    img: gal2,
+                    img: seminar,
                     title: "Seminar Rutin",
-                    desc: "Seminar bersama tokoh usaha atau motivator untuk menumbuhkan semangat dan wawasan kewirausahaan peserta.",
+                    desc: "Seminar bersama tokoh usaha atau motivator untuk menumbuhkan semangat dan wawasan kewirausahaan.",
                   },
                 ],
                 [
                   {
-                    img: gal1,
+                    img: jumat,
                     title: "Program Jumat Berkah",
-                    desc: "Kegiatan berbagi nasi dan minuman setiap Jumat sebagai bentuk kepedulian sosial terhadap masyarakat sekitar.",
+                    desc: "Berbagi nasi dan minuman setiap Jumat sebagai bentuk kepedulian sosial terhadap masyarakat sekitar.",
                   },
                   {
-                    img: gal2,
+                    img: wisuda,
                     title: "Wisuda Peserta ITC",
                     desc: "Momen sakral kelulusan peserta setelah menyelesaikan program pelatihan dan uji kompetensi.",
                   },
@@ -336,7 +353,8 @@ export default function Dashboard() {
                   <div className="row g-3">
                     {slide.map((k, idx) => (
                       <div key={idx} className="col-12 col-md-6">
-                        <a href="/galeri" className="text-decoration-none">
+                        {/* seluruh kartu bisa diklik ke halaman galeri */}
+                        <a href="/galeri" className="text-decoration-none text-reset">
                           <div className="card h-100 border-0 overflow-hidden kegiatan-card">
                             <div className="ratio ratio-4x3">
                               <img
@@ -348,8 +366,7 @@ export default function Dashboard() {
                             {/* Overlay caption */}
                             <div className="kegiatan-overlay">
                               <h5 className="fw-bold mb-1 text-white">{k.title}</h5>
-                              <p className="mb-2 small text-white-50">{k.desc}</p>
-                              <span className="btn btn-sm btn-itc">Lihat Selengkapnya</span>
+                              <p className="mb-0 small text-white-50">{k.desc}</p>
                             </div>
                           </div>
                         </a>
@@ -362,66 +379,106 @@ export default function Dashboard() {
             </div>
 
             {/* Controls */}
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselKegiatan" data-bs-slide="prev">
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselKegiatan"
+              data-bs-slide="prev"
+            >
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Previous</span>
             </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselKegiatan" data-bs-slide="next">
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselKegiatan"
+              data-bs-slide="next"
+            >
               <span className="carousel-control-next-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Next</span>
             </button>
 
             {/* Indicators */}
             <div className="carousel-indicators position-static mt-3">
-              <button type="button" data-bs-target="#carouselKegiatan" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselKegiatan" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button
+                type="button"
+                data-bs-target="#carouselKegiatan"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselKegiatan"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
             </div>
+          </div>
+
+          {/* CTA BESAR DI BAWAH CAROUSEL */}
+          <div className="text-center mt-3">
+            <a href="/galeri" className="btn btn-outline-itc">
+              Lihat semua kegiatan di galeri
+            </a>
           </div>
         </div>
 
         {/* STYLE khusus section ini */}
         <style>{`
-    :root{
-      --itc-primary:#0284C7; --itc-primary-700:#0369A1;
-    }
+          :root{
+            --itc-primary:#0284C7;
+            --itc-primary-700:#0369A1;
+          }
 
-    .kegiatan-card{
-      border-radius: 1rem;
-    }
-    .kegiatan-card img{
-      display:block;
-    }
-    /* Overlay di bawah gambar (gradient) */
-    .kegiatan-overlay{
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      padding: .9rem 1rem;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(3,7,18,0.75) 80%, rgba(3,7,18,0.9) 100%);
-      color:#fff;
-    }
+          .kegiatan-card{
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+          }
+          .kegiatan-card img{
+            display:block;
+          }
 
-    /* Indicators lebih manis */
-    .carousel-indicators [data-bs-target]{
-      width: .7rem; height: .7rem; border-radius: 999px;
-      background-color: rgba(2,132,199,.35);
-    }
-    .carousel-indicators .active{
-      background-color: var(--itc-primary);
-    }
+          /* Overlay di bawah gambar (gradient) */
+          .kegiatan-overlay{
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            padding: .9rem 1rem;
+            background: linear-gradient(
+              180deg,
+              rgba(0,0,0,0) 0%,
+              rgba(3,7,18,0.75) 80%,
+              rgba(3,7,18,0.9) 100%
+            );
+            color:#fff;
+          }
 
-    /* Arrow sedikit dibesarkan */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon{
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
-    }
+          /* Hover ringan */
+          .kegiatan-card:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 0.9rem 1.5rem rgba(15,23,42,.18);
+          }
 
-    /* Hover ringan */
-    .kegiatan-card:hover{
-      transform: translateY(-2px);
-      transition: transform .18s ease;
-    }
-  `}</style>
+          /* Indicators lebih manis */
+          .carousel-indicators [data-bs-target]{
+            width: .7rem; height: .7rem; border-radius: 999px;
+            background-color: rgba(2,132,199,.35);
+          }
+          .carousel-indicators .active{
+            background-color: var(--itc-primary);
+          }
+
+          /* Arrow sedikit dibesarkan */
+          .carousel-control-prev-icon,
+          .carousel-control-next-icon{
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
+          }
+        `}</style>
       </section>
+
       {/* === TESTIMONI LULUSAN (DENGAN CAROUSEL OTOMATIS) === */}
       <section className="py-5 bg-white">
         <div className="container">
@@ -436,42 +493,42 @@ export default function Dashboard() {
               {[
                 [
                   {
-                    nama: "Dahlia Nasution",
-                    kerja: "CV. HSR – Padang Lawas Utara",
-                    img: "/assets/alumni-dahlia.png",
-                    kutipan: "Belajar di ITC bikin saya siap kerja. Instruktur sabar, dan praktiknya langsung sesuai dunia kerja!",
+                    nama: "Suci Ramadhani",
+                    kerja: "Bekerja di PT. Istana Deli Kencana",
+                    img: suci,
+                    kutipan: "Hallo semuanya Saya Suci Ramadhani dari Alumni ITC Business School Berkat saya kursus komputer di ITC, Alhamdulillah saya sudah mendapatkan jenjang karir yang baik dengan adanya pelatihan yang terbaik di ajarkan oleh instruktur yang ramah dan baik hati. Saya kursus komputer di ITC Profesi 1 tahun siap kerja, 10 bulan kursus 2 bulan magang di kantor PLN UP3 Rantauprapat. Alhamdulillah dalam pelatihan ini saya dapat mengasah kemampuan saya di bidang keuangan dan juga administrasi. Terimakasih ITC Business School ",
                   },
                   {
-                    nama: "Rudi Hartono",
-                    kerja: "PT. Digital Indo",
-                    img: gal1,
-                    kutipan: "Program profesi ITC membantu saya punya skill teknis dan cepat diterima kerja.",
+                    nama: "Dea Adinda",
+                    kerja: "Bekerja di Aisyah Hijab Collection B. Batu",
+                    img: dea,
+                    kutipan: "Haii everyone! Saya Dea Adinda dari Alumni ITC Business School , Berkat saya kursus komputer di ITC saya mendapatkan potensi atau arah jenjang karir yang sangat baik dari adanya pelatihan ini dengan instruktur yang ramah, berdedikasi dan baik hati. Alhamdulillah sekarang saya sudah mendapatkan pekerjaan Berkat ITC Profesi 1 tahun siap kerja, pelatihan 10 bulan dan 2 bulan magang. Saya sangat berterimakasih kepada ITC karena sudah memberikan ilmu, wawasan dan kemampuan untuk menjadikan saya lebih siap bekerja di lapangan. Terimakasih ITC Business School, Jaya Jaya Jaya",
                   },
                   {
-                    nama: "Siti Amalia",
-                    kerja: "Studio Grafis Mandiri",
-                    img: gal2,
-                    kutipan: "Instruktur profesional, fasilitas lengkap, dan suasana belajarnya menyenangkan!",
+                    nama: "Tuah Purnama Wati",
+                    kerja: "Bekerja di FIF Group Negeri Lama",
+                    img: tuah,
+                    kutipan: "Berkat saya kursus komputer di ITC, Alhamdulillah saya sudah mendapatkan jenjang karir yang baik dengan adanya pelatihan yang terbaik diajarkan oleh instruktur yang ramah dan baik hati Saya kursus komputer di ITC Profesi 1 Tahun Siap Kerja, 10 bulan kursus 2 bulan magang di kantor FIF GROUP Rantauprapat. Alhamdulillah dalam pelatihan ini sehingga dapat mengasah kemampuan saya khususnya digital marketing agar siap bekerja di lapangan. Terimakasih ITC Business School",
                   },
                 ],
                 [
                   {
-                    nama: "Ahmad Fauzan",
-                    kerja: "PT. Media Solusi Digital",
-                    img: gal1,
-                    kutipan: "Saya belajar editing video dan langsung diterima di perusahaan media, keren banget!",
+                    nama: "Nurhalimah Tusakdiah",
+                    kerja: "Bekerja di Home Beauty",
+                    img: nurhalimah,
+                    kutipan: "Saya Nurhalimah Tusakdiah, alumni ITC Business School. Saya merasa sangat puas pernah belajar di ITC, instruktur sangat profesional dan sangat ramah. Pengalaman belajar di ITC ini sangatlah menyenangkan. Terima kasih ITC Business School sudah pernah mengajarkan saya komputer.",
                   },
                   {
-                    nama: "Nur Aini",
-                    kerja: "Percetakan Prima Jaya",
-                    img: gal2,
-                    kutipan: "Berkat bimbingan instruktur, saya bisa desain sendiri brosur dan banner profesional.",
+                    nama: "Mahjuro",
+                    kerja: "Bekerja di LKP. Intermedia Training Center",
+                    img: mahjiro,
+                    kutipan: "Awalnya saya sama sekali tidak mengerti tentang komputer, semenjak bergabung di ITC alhamdulillah sekarang saya sudah memiliki skill komputer yang sangat bermanfaat sekali dan bahkan mengubah kehidupan saya menjadi lebih baik. Saya sangat senang dan berterimakasih sekali kepada instruktur atas bimbingan dan ilmu yang telah saya peroleh selama ini.Berkat pelatihan ini yang telah memberikan pengalaman yang sangat berharga dan membuka banyak kesempatan baru bagi saya. Instruktur nya juga ramah dan orang yang ceria. Berkat ilmu yang telah saya dapatkan sekarang saya bisa mengajarkan komputer kepada mereka yang ingin belajar dan menjadi lebih baik lagi. Semoga ITC sukses selalu",
                   },
                   {
-                    nama: "Indra Gunawan",
-                    kerja: "PT. Sinar Labuhan Sejahtera",
-                    img: gal1,
-                    kutipan: "Fasilitas lengkap, suasana nyaman, dan pembelajaran langsung praktik.",
+                    nama: "Winda Karunia Tanjung",
+                    kerja: "Bekerja di Percetakan Jaya Utama Grafika",
+                    img: winda,
+                    kutipan: "Belajar di ITC Business School itu bener-bener ngebantu banget.Materinya mudah dipahami, instrukturnya ramah, udah terakreditasi, dan program kursusnya cocok buat nambah skill.Pas banget buat yang pengen upgrade diri.Terima kasih, dan sukses selalu ITC Business School!",
                   },
                 ],
               ].map((group, i) => (

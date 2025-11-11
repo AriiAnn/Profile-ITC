@@ -14,7 +14,15 @@ import wis2 from "../assets/wisuda/wis2.jpg";
 import wis3 from "../assets/wisuda/wis3.jpg";
 import jum1 from "../assets/jumat berkah/1.jpg";
 import jum2 from "../assets/jumat berkah/2.jpg";
-
+import mmp1 from "../assets/peduli mesjid dan musholla/1.jpeg";
+import mmp2 from "../assets/peduli mesjid dan musholla/2.jpeg";
+import obd1 from "../assets/outbond/1.jpeg";
+import obd2 from "../assets/outbond/2.jpeg";
+import obd3 from "../assets/outbond/3.jpeg";
+import obd4 from "../assets/outbond/4.jpeg";
+import smnr1 from "../assets/seminar/1.jpeg";
+import smnr2 from "../assets/seminar/2.jpeg";
+import smnr3 from "../assets/seminar/3.jpeg";
 /**
  * Satu judul bisa punya beberapa foto
  */
@@ -22,12 +30,12 @@ const DATA = [
   {
     title: "Outbond",
     desc: "Kegiatan outbond rutin setiap 3 bulan sekali untuk mempererat kebersamaan dan teamwork peserta ITC.",
-    photos: [g1, g2, g3],
+    photos: [obd1, obd2, obd3, obd4],
   },
   {
     title: "Seminar Rutin",
     desc: "Seminar bersama tokoh usaha atau motivator untuk menumbuhkan semangat dan wawasan kewirausahaan peserta.",
-    photos: [g2],
+    photos: [smnr1, smnr2, smnr3],
   },
   {
     title: "Program Jumat Berkah",
@@ -47,7 +55,7 @@ const DATA = [
   {
     title: "Peduli Masjid & Mushalla Pedalaman",
     desc: "Program sosial membantu penyediaan sarana ibadah bagi masjid dan mushalla di daerah pedalaman.",
-    photos: [g6, g1, g2],
+    photos: [mmp1, mmp2],
   },
 ];
 
@@ -141,13 +149,16 @@ export default function Galeri() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-content border-0 rounded-4 overflow-hidden">
-              <div className="position-relative">
+              {/* WRAPPER GAMBAR */}
+              <div
+                className="position-relative viewer-frame"
+              >
                 <img
                   src={DATA[viewer.group].photos[viewer.photo]}
                   alt={DATA[viewer.group].title}
-                  className="w-100"
-                  style={{ maxHeight: "75vh", objectFit: "cover" }}
+                  className="viewer-img"
                 />
+
                 {DATA[viewer.group].photos.length > 1 && (
                   <>
                     <button
@@ -199,10 +210,7 @@ export default function Galeri() {
                   </div>
                 )}
 
-                <button
-                  className="btn btn-outline-itc"
-                  onClick={closeViewer}
-                >
+                <button className="btn btn-outline-itc" onClick={closeViewer}>
                   Tutup
                 </button>
               </div>
@@ -210,6 +218,7 @@ export default function Galeri() {
           </div>
         </div>
       )}
+
 
       {/* STYLE */}
       <style>{`
@@ -317,6 +326,20 @@ export default function Galeri() {
           opacity:1;
           box-shadow:0 0 0 2px var(--itc-primary);
         }
+          .viewer-frame {
+  background: #000;          /* biar rapi kalau ada ruang kosong */
+  height: 75vh;              /* frame fix 75% tinggi layar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;       /* gambar tampil full, tidak terpotong */
+}
+
       `}</style>
     </main>
   );

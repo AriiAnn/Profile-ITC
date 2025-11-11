@@ -226,7 +226,7 @@ export default function ProgramReguler() {
 
           <div className="border rounded-3 p-3 bg-white mb-3">
             <p className="mb-1"><strong>Alamat:</strong> Jl. Padang Bulan No. 13 A – C Rantauprapat</p>
-            <p className="mb-0"><strong>Contact Person:</strong> 0852 1880 3835 (Bapak Fandu)</p>
+            <p className="mb-0"><strong>Contact Person:</strong> 0853-6251-8120</p>
           </div>
 
           {/* CTA bawah */}

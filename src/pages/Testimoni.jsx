@@ -1,59 +1,74 @@
 // src/pages/Testimoni.jsx
 import React from "react";
-import gal1 from "../assets/galeri2.jpeg";
-import gal2 from "../assets/galeri1.jpeg";
+import suci from "../assets/testimoni/suci.jpeg";
+import dea from "../assets/testimoni/dea.jpeg";
+import tuah from "../assets/testimoni/tuah.jpeg";
+import febriela from "../assets/testimoni/febriela.jpeg";
+import mahjiro from "../assets/testimoni/mahjiro.jpeg";
+import nurhalimah from "../assets/testimoni/nurhalimah.jpeg";
+import sri from "../assets/testimoni/sri.jpeg";
+import winda from "../assets/testimoni/winda.jpeg"; // pastikan nama file benar
 
 const DATA_TESTIMONI = [
   {
-    nama: "Dahlia Nasution",
-    kerja: "CV. HSR – Padang Lawas Utara",
-    img: "/assets/alumni-dahlia.png", // ganti jika kamu punya foto aslinya
+    nama: "Winda Karunia Tanjung",
+    kerja: "Bekerja di Percetakan Jaya Utama Grafika",
+    img: winda,
     kutipan:
-      "Belajar di ITC bikin saya siap kerja. Instruktur sabar, dan praktiknya langsung sesuai dunia kerja!",
+      "Belajar di ITC Business School itu bener-bener ngebantu banget. Materinya mudah dipahami, instrukturnya ramah, sudah terakreditasi, dan program kursusnya cocok buat nambah skill. Pas banget buat yang pengen upgrade diri. Terima kasih, dan sukses selalu ITC Business School!",
   },
   {
-    nama: "Rudi Hartono",
-    kerja: "PT. Digital Indo",
-    img: gal1,
+    nama: "Mahjuro",
+    kerja: "Bekerja di LKP. Intermedia Training Center",
+    img: mahjiro,
     kutipan:
-      "Program profesi ITC membantu saya punya skill teknis dan cepat diterima kerja.",
+      "Awalnya saya sama sekali tidak mengerti tentang komputer, semenjak bergabung di ITC alhamdulillah sekarang saya sudah memiliki skill komputer yang sangat bermanfaat dan bahkan mengubah kehidupan saya menjadi lebih baik. Saya sangat senang dan berterimakasih kepada instruktur atas bimbingan dan ilmu yang telah saya peroleh selama ini. Berkat pelatihan ini saya mendapatkan pengalaman yang sangat berharga dan membuka banyak kesempatan baru bagi saya. Instruktur juga ramah dan ceria. Berkat ilmu yang saya dapatkan, sekarang saya bisa mengajarkan komputer kepada mereka yang ingin belajar dan menjadi lebih baik lagi. Semoga ITC sukses selalu.",
   },
   {
-    nama: "Siti Amalia",
-    kerja: "Studio Grafis Mandiri",
-    img: gal2,
+    nama: "Nurhalimah Tusakdiah",
+    kerja: "Bekerja di Home Beauty",
+    img: nurhalimah,
     kutipan:
-      "Instruktur profesional, fasilitas lengkap, dan suasana belajarnya menyenangkan!",
+      "Saya Nurhalimah Tusakdiah, alumni ITC Business School. Saya merasa sangat puas pernah belajar di ITC, instruktur sangat profesional dan sangat ramah. Pengalaman belajar di ITC ini sangatlah menyenangkan. Terima kasih ITC Business School sudah pernah mengajarkan saya komputer.",
   },
   {
-    nama: "Ahmad Fauzan",
-    kerja: "PT. Media Solusi Digital",
-    img: gal1,
+    nama: "Tuah Purnama Wati",
+    kerja: "Bekerja di FIF Group Negeri Lama",
+    img: tuah,
     kutipan:
-      "Saya belajar editing video dan langsung diterima di perusahaan media, keren banget!",
+      "Berkat saya kursus komputer di ITC, Alhamdulillah saya sudah mendapatkan jenjang karir yang baik dengan adanya pelatihan yang terbaik yang diajarkan oleh instruktur yang ramah dan baik hati. Saya kursus komputer di ITC Profesi 1 Tahun Siap Kerja, 10 bulan kursus 2 bulan magang di kantor FIF GROUP Rantauprapat. Alhamdulillah dalam pelatihan ini saya dapat mengasah kemampuan khususnya di bidang digital marketing agar siap bekerja di lapangan. Terimakasih ITC Business School.",
   },
   {
-    nama: "Nur Aini",
-    kerja: "Percetakan Prima Jaya",
-    img: gal2,
+    nama: "Dea Adinda",
+    kerja: "Bekerja di Aisyah Hijab Collection B. Batu",
+    img: dea,
     kutipan:
-      "Berkat bimbingan instruktur, saya bisa desain sendiri brosur dan banner profesional.",
+      "Haii everyone! Saya Dea Adinda dari Alumni ITC Business School. Berkat saya kursus komputer di ITC saya mendapatkan potensi atau arah jenjang karir yang sangat baik dari adanya pelatihan ini dengan instruktur yang ramah, berdedikasi dan baik hati. Alhamdulillah sekarang saya sudah mendapatkan pekerjaan. Berkat ITC Profesi 1 Tahun Siap Kerja, pelatihan 10 bulan dan 2 bulan magang. Saya sangat berterimakasih kepada ITC karena sudah memberikan ilmu, wawasan dan kemampuan untuk menjadikan saya lebih siap bekerja di lapangan. Terimakasih ITC Business School, Jaya Jaya Jaya.",
   },
   {
-    nama: "Indra Gunawan",
-    kerja: "PT. Sinar Labuhan Sejahtera",
-    img: gal1,
+    nama: "Suci Ramadhani",
+    kerja: "Bekerja di PT. Istana Deli Kencana",
+    img: suci,
     kutipan:
-      "Fasilitas lengkap, suasana nyaman, dan pembelajaran langsung praktik.",
+      "Hallo semuanya, saya Suci Ramadhani dari Alumni ITC Business School. Berkat saya kursus komputer di ITC, Alhamdulillah saya sudah mendapatkan jenjang karir yang baik dengan adanya pelatihan yang terbaik yang diajarkan oleh instruktur yang ramah dan baik hati. Saya kursus komputer di ITC Profesi 1 Tahun Siap Kerja, 10 bulan kursus 2 bulan magang di kantor PLN UP3 Rantauprapat. Alhamdulillah dalam pelatihan ini saya dapat mengasah kemampuan di bidang keuangan dan juga administrasi. Terimakasih ITC Business School.",
+  },
+  {
+    nama: "Febriela Wida Br. Pasaribu",
+    kerja: "Bekerja di PT. Perawang Agro Sejahtera, Tualang, Siak – Riau",
+    img: febriela,
+    kutipan:
+      "Halo semua, saya Febriela Wida Br Pasaribu. Saya alumni dari ITC Business School. Alhamdulillah setelah mengikuti pelatihan 1 Tahun Siap Kerja di ITC saya mempunyai kemampuan di bidang komputer dan mendapatkan pengalaman dari magang selama 2 bulan. Setelah saya magang, saya mempunyai keberanian untuk melamar di berbagai pekerjaan sampai akhirnya saya keterima di sebuah PT. Perusahaan. Terimakasih buat bapak/ibu yang sudah sabar dalam melatih kami.",
+  },
+  {
+    nama: "Sri Fadilla Hutahean",
+    kerja: "Bekerja di Royal Permata Hotel",
+    img: sri,
+    kutipan:
+      "Halo semuanya, saya Sri Fadilla Hutahean dari alumni ITC Business School. Alhamdulillah saya akhirnya mendapatkan jenjang karir yang sangat bagus dan baik. Sebelumnya saya kursus di ITC, di sana saya diajarkan dengan pelatihan terbaik oleh instruktur yang ramah dan baik. Saya kursus komputer di ITC Profesi 1 Tahun Siap Kerja, 2 bulan saya magang di Kantor Bappeda Kotapinang. Alhamdulillah saya di sana diajarkan sebaik mungkin dan mendapatkan ilmu yang sangat baik. Terimakasih ITC Business School.",
   },
 ];
 
 export default function Testimoni() {
-  const [show, setShow] = React.useState(6); // tampilkan 6 dulu
-
-  const visible = DATA_TESTIMONI.slice(0, show);
-  const canLoadMore = show < DATA_TESTIMONI.length;
-
   return (
     <main>
       <section className="py-5 bg-white">
@@ -66,7 +81,7 @@ export default function Testimoni() {
           </div>
 
           <div className="row g-4 justify-content-center">
-            {visible.map((t, idx) => (
+            {DATA_TESTIMONI.map((t, idx) => (
               <div key={idx} className="col-12 col-md-6 col-lg-4">
                 <div className="card border-0 shadow-sm h-100 text-center p-3 alumni-card">
                   <div
@@ -87,17 +102,6 @@ export default function Testimoni() {
               </div>
             ))}
           </div>
-
-          {canLoadMore && (
-            <div className="text-center mt-4">
-              <button
-                className="btn btn-outline-itc"
-                onClick={() => setShow((s) => Math.min(s + 6, DATA_TESTIMONI.length))}
-              >
-                Muat lebih banyak
-              </button>
-            </div>
-          )}
         </div>
 
         <style>{`
